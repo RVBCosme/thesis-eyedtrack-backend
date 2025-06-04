@@ -1,0 +1,20 @@
+Debug log started at 2025-05-24T23:24:48.641801
+Python version: 3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]
+OpenCV version: 4.10.0
+NumPy version: 1.26.4
+2025-05-24T23:24:49.952024 - Driver monitoring system started
+2025-05-24T23:25:29.480816 - Frame #50 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'model_predictions', 'capture_fps', 'debug', 'frame_index']
+2025-05-24T23:25:29.481829 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=22, max=255
+2025-05-24T23:25:58.297826 - Frame #100 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'model_predictions', 'capture_fps', 'debug', 'frame_index']
+2025-05-24T23:25:58.298405 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=13, max=255
+2025-05-24T23:26:17.401479 - Frame #150 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'model_predictions', 'capture_fps', 'debug', 'frame_index']
+2025-05-24T23:26:17.402479 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=23, max=252
+2025-05-24T23:26:40.007639 - Frame #200 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'model_predictions', 'capture_fps', 'debug', 'frame_index']
+2025-05-24T23:26:40.008634 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=16, max=255
+2025-05-24T23:27:06.492747 - Frame #250 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'model_predictions', 'capture_fps', 'debug', 'frame_index']
+2025-05-24T23:27:06.493809 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=4, max=255
+2025-05-24T23:27:30.188594 - Frame #300 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'model_predictions', 'capture_fps', 'debug', 'frame_index']
+2025-05-24T23:27:30.189598 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=2, max=255
+2025-05-24T23:28:04.015934 - Frame #350 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'model_predictions', 'capture_fps', 'debug', 'frame_index']
+2025-05-24T23:28:04.016936 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=18, max=255
+2025-05-24T23:28:27.855406 - Driver monitoring system stopped

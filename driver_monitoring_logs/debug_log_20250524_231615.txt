@@ -1,0 +1,6 @@
+Debug log started at 2025-05-24T23:16:15.712690
+Python version: 3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]
+OpenCV version: 4.10.0
+NumPy version: 1.26.4
+2025-05-24T23:16:16.957011 - Driver monitoring system started
+2025-05-24T23:16:41.152674 - Driver monitoring system stopped

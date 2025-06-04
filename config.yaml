@@ -1,0 +1,118 @@
+# config.yaml
+camera:
+  device_id: 0
+  width: 640
+  height: 480
+  fps: 30
+
+face_detection:
+  use_cnn: false
+  use_media_pipe: true
+  use_media_pipe_mesh: true
+  min_face_size: [50, 50]
+  scale_factor: 1.05
+  min_neighbors: 5
+
+clahe:
+  enabled: true
+  clip_limit: 2.5
+  base_tile_grid_size: [8, 8]
+  do_gamma: false
+  do_homomorphic: false
+  homomorphic_sigma: 30.0
+  homomorphic_low_gain: 0.7
+  homomorphic_high_gain: 1.5
+
+thresholds:
+  ear_lower: 0.25
+  ear_upper: 0.30
+  mar_lower: 0.4
+  mar_upper: 0.6
+  drowsy_frames: 5
+  yawn_frames: 4
+  distraction_frames: 12
+  yaw_threshold: 45
+  pitch_threshold: 30
+  roll_threshold: 25
+
+behavior:
+  model_dir: "driver_behavior_model"
+  only_alert_on_risk: true
+  top_k: 3
+  temporal_smoothing: true
+  smoothing_window: 3
+  confidence_threshold: 0.3
+  use_llava: false
+  behavior_categories:
+    - "drowsy driver with eyes closing"
+    - "distracted driver looking away from road"
+    - "yawning driver showing fatigue"
+
+logging:
+  level: "DEBUG"
+  log_dir: "driver_monitoring_logs"
+  log_data: true
+  log_events: true
+
+display:
+  show_fps: true
+  only_show_status_on_risk: false
+  show_landmarks: false
+  show_head_pose: false
+  show_alerts: true
+  show_status_panel: true
+  alert_duration: 3.0
+
+performance:
+  skip_frames: 0
+  max_queue_size: 2
+  resize_factor: 1.0
+  use_threading: true
+  max_workers: 2
+  enable_gpu: false
+  camera_buffer_size: 1
+  batch_size: 1
+  profile_performance: false
+  track_memory: false
+
+integration:
+  api:
+    enabled: true
+    host: "0.0.0.0"
+    port: 5000
+    base_url: ""
+    api_key: ""
+    cors_origins: ["*"]
+    allowed_hosts: ["localhost", "127.0.0.1", "10.0.2.2", "0.0.0.0", "*", "172.16.112.81", "192.168.1.11"]
+  mqtt:
+    enabled: false
+    broker: "localhost"
+    port: 1883
+    topic: "driver_monitoring"
+  database:
+    type: "mysql"
+    host: "localhost"
+    port: 3306
+    database: "eyedtrack_db"
+    username: "root"
+    password: ""
+    pool_size: 5
+    max_overflow: 10
+    pool_timeout: 30
+    pool_recycle: 3600
+
+gui:
+  enabled: false
+
+head_pose:
+  use_kalman_filter: true
+  stabilization_window: 5
+  confidence_threshold: 0.5
+  angle_smoothing: true
+  max_angle_change: 15.0
+
+robustness:
+  lighting_adaptation: true
+  error_recovery: true
+  fallback_modes: true
+  automatic_recalibration: false

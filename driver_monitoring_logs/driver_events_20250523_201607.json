@@ -1,0 +1,3 @@
+{"test": "Log file initialized"}
+{"timestamp": "2025-05-23T20:16:20.659726", "behavior_category": {"is_drowsy": false, "is_yawning": false, "is_distracted": false}, "behavior_output": "NO BEHAVIOR DETECTED", "mar": 0.0, "ear": 0.0, "pitch": 0.0, "yaw": 0.0, "roll": 0.0, "behavior_confidence": 0.0}
+{"timestamp": "2025-05-23T20:16:21.814666", "behavior_category": {"is_drowsy": false, "is_yawning": false, "is_distracted": false}, "behavior_output": "NO BEHAVIOR DETECTED", "mar": 0.0, "ear": 0.0, "pitch": 0.0, "yaw": 0.0, "roll": 0.0, "behavior_confidence": 0.0}

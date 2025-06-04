@@ -1,0 +1,1774 @@
+Debug log started at 2025-05-24T22:38:23.939745
+Python version: 3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]
+OpenCV version: 4.10.0
+NumPy version: 1.26.4
+2025-05-24T22:38:25.253868 - Driver monitoring system started
+2025-05-24T22:38:30.248254 - Frame #1 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.249249 - original_frame: None
+2025-05-24T22:38:30.249249 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.250248 - Invalid frame: frame: None
+2025-05-24T22:38:30.342142 - Frame #2 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.343145 - original_frame: None
+2025-05-24T22:38:30.343145 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.344142 - Invalid frame: frame: None
+2025-05-24T22:38:30.435260 - Frame #3 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.435260 - original_frame: None
+2025-05-24T22:38:30.436322 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.437275 - Invalid frame: frame: None
+2025-05-24T22:38:30.438315 - Frame #4 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.438315 - original_frame: None
+2025-05-24T22:38:30.438315 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.439288 - Invalid frame: frame: None
+2025-05-24T22:38:30.440286 - Frame #5 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.440286 - original_frame: None
+2025-05-24T22:38:30.441275 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.441275 - Invalid frame: frame: None
+2025-05-24T22:38:30.546868 - Frame #6 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.547875 - original_frame: None
+2025-05-24T22:38:30.547875 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.548886 - Invalid frame: frame: None
+2025-05-24T22:38:30.548886 - Frame #7 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.549875 - original_frame: None
+2025-05-24T22:38:30.549875 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.550876 - Invalid frame: frame: None
+2025-05-24T22:38:30.556749 - Frame #8 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.557750 - original_frame: None
+2025-05-24T22:38:30.557750 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.557750 - Invalid frame: frame: None
+2025-05-24T22:38:30.653097 - Frame #9 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.654032 - original_frame: None
+2025-05-24T22:38:30.654032 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.655026 - Invalid frame: frame: None
+2025-05-24T22:38:30.730612 - Frame #10 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.731608 - original_frame: None
+2025-05-24T22:38:30.731608 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.732605 - Invalid frame: frame: None
+2025-05-24T22:38:30.733604 - Frame #11 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.733604 - original_frame: None
+2025-05-24T22:38:30.733604 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.734606 - Invalid frame: frame: None
+2025-05-24T22:38:30.900889 - Frame #12 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.900889 - original_frame: None
+2025-05-24T22:38:30.900889 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.901888 - Invalid frame: frame: None
+2025-05-24T22:38:30.901888 - Frame #13 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.902897 - original_frame: None
+2025-05-24T22:38:30.903887 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.904889 - Invalid frame: frame: None
+2025-05-24T22:38:30.966478 - Frame #14 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.967484 - original_frame: None
+2025-05-24T22:38:30.967484 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.968483 - Invalid frame: frame: None
+2025-05-24T22:38:30.968483 - Frame #15 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:30.968483 - original_frame: None
+2025-05-24T22:38:30.969535 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:30.969535 - Invalid frame: frame: None
+2025-05-24T22:38:31.056646 - Frame #16 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.057652 - original_frame: None
+2025-05-24T22:38:31.057652 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.058647 - Invalid frame: frame: None
+2025-05-24T22:38:31.136381 - Frame #17 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.136381 - original_frame: None
+2025-05-24T22:38:31.137380 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.137380 - Invalid frame: frame: None
+2025-05-24T22:38:31.138383 - Frame #18 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.138383 - original_frame: None
+2025-05-24T22:38:31.138383 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.139379 - Invalid frame: frame: None
+2025-05-24T22:38:31.283504 - Frame #19 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.284574 - original_frame: None
+2025-05-24T22:38:31.284574 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.285531 - Invalid frame: frame: None
+2025-05-24T22:38:31.286318 - Frame #20 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.286318 - original_frame: None
+2025-05-24T22:38:31.286318 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.287326 - Invalid frame: frame: None
+2025-05-24T22:38:31.394352 - Frame #21 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.394352 - original_frame: None
+2025-05-24T22:38:31.395387 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.395387 - Invalid frame: frame: None
+2025-05-24T22:38:31.396363 - Frame #22 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.396363 - original_frame: None
+2025-05-24T22:38:31.396363 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.397359 - Invalid frame: frame: None
+2025-05-24T22:38:31.562448 - Frame #23 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.563481 - original_frame: None
+2025-05-24T22:38:31.563481 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.564459 - Invalid frame: frame: None
+2025-05-24T22:38:31.564459 - Frame #24 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.564459 - original_frame: None
+2025-05-24T22:38:31.565459 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.565459 - Invalid frame: frame: None
+2025-05-24T22:38:31.566887 - Frame #25 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.566887 - original_frame: None
+2025-05-24T22:38:31.566887 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.567908 - Invalid frame: frame: None
+2025-05-24T22:38:31.687847 - Frame #26 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.688792 - original_frame: None
+2025-05-24T22:38:31.688792 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.688792 - Invalid frame: frame: None
+2025-05-24T22:38:31.689787 - Frame #27 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.689787 - original_frame: None
+2025-05-24T22:38:31.689787 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.689787 - Invalid frame: frame: None
+2025-05-24T22:38:31.760683 - Frame #28 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.761664 - original_frame: None
+2025-05-24T22:38:31.762662 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.762662 - Invalid frame: frame: None
+2025-05-24T22:38:31.763673 - Frame #29 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.763673 - original_frame: None
+2025-05-24T22:38:31.763673 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.764664 - Invalid frame: frame: None
+2025-05-24T22:38:31.849928 - Frame #30 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.849928 - original_frame: None
+2025-05-24T22:38:31.849928 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.851528 - Invalid frame: frame: None
+2025-05-24T22:38:31.933270 - Frame #31 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.934240 - original_frame: None
+2025-05-24T22:38:31.934240 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.935233 - Invalid frame: frame: None
+2025-05-24T22:38:31.936237 - Frame #32 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:31.936237 - original_frame: None
+2025-05-24T22:38:31.936237 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:31.937682 - Invalid frame: frame: None
+2025-05-24T22:38:32.082745 - Frame #33 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.082745 - original_frame: None
+2025-05-24T22:38:32.082745 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.083850 - Invalid frame: frame: None
+2025-05-24T22:38:32.083850 - Frame #34 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.083850 - original_frame: None
+2025-05-24T22:38:32.084757 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.084757 - Invalid frame: frame: None
+2025-05-24T22:38:32.212689 - Frame #35 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.212689 - original_frame: None
+2025-05-24T22:38:32.212689 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.214193 - Invalid frame: frame: None
+2025-05-24T22:38:32.214193 - Frame #36 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.215200 - original_frame: None
+2025-05-24T22:38:32.215200 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.216212 - Invalid frame: frame: None
+2025-05-24T22:38:32.316226 - Frame #37 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.317212 - original_frame: None
+2025-05-24T22:38:32.317212 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.318701 - Invalid frame: frame: None
+2025-05-24T22:38:32.318701 - Frame #38 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.318701 - original_frame: None
+2025-05-24T22:38:32.318701 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.319700 - Invalid frame: frame: None
+2025-05-24T22:38:32.420218 - Frame #39 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.420218 - original_frame: None
+2025-05-24T22:38:32.421217 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.421217 - Invalid frame: frame: None
+2025-05-24T22:38:32.422219 - Frame #40 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.422725 - original_frame: None
+2025-05-24T22:38:32.422725 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.423881 - Invalid frame: frame: None
+2025-05-24T22:38:32.423881 - Frame #41 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.423881 - original_frame: None
+2025-05-24T22:38:32.424874 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.424874 - Invalid frame: frame: None
+2025-05-24T22:38:32.505944 - Frame #42 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.505944 - original_frame: None
+2025-05-24T22:38:32.507268 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.507268 - Invalid frame: frame: None
+2025-05-24T22:38:32.609747 - Frame #43 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.609747 - original_frame: None
+2025-05-24T22:38:32.610738 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.611736 - Invalid frame: frame: None
+2025-05-24T22:38:32.611736 - Frame #44 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.612740 - original_frame: None
+2025-05-24T22:38:32.612740 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.612740 - Invalid frame: frame: None
+2025-05-24T22:38:32.702973 - Frame #45 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.702973 - original_frame: None
+2025-05-24T22:38:32.703970 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.703970 - Invalid frame: frame: None
+2025-05-24T22:38:32.704972 - Frame #46 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.704972 - original_frame: None
+2025-05-24T22:38:32.704972 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.705975 - Invalid frame: frame: None
+2025-05-24T22:38:32.788884 - Frame #47 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.788884 - original_frame: None
+2025-05-24T22:38:32.790002 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.791010 - Invalid frame: frame: None
+2025-05-24T22:38:32.905651 - Frame #48 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.906236 - original_frame: None
+2025-05-24T22:38:32.906236 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.907252 - Invalid frame: frame: None
+2025-05-24T22:38:32.907252 - Frame #49 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.907252 - original_frame: None
+2025-05-24T22:38:32.907252 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.908435 - Invalid frame: frame: None
+2025-05-24T22:38:32.908435 - Frame #50 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:32.908435 - original_frame: None
+2025-05-24T22:38:32.909460 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:32.909460 - Invalid frame: frame: None
+2025-05-24T22:38:33.045582 - Frame #51 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.046576 - original_frame: None
+2025-05-24T22:38:33.046576 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.046576 - Invalid frame: frame: None
+2025-05-24T22:38:33.047591 - Frame #52 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.047591 - original_frame: None
+2025-05-24T22:38:33.047591 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.047960 - Invalid frame: frame: None
+2025-05-24T22:38:33.047960 - Frame #53 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.047960 - original_frame: None
+2025-05-24T22:38:33.047960 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.048995 - Invalid frame: frame: None
+2025-05-24T22:38:33.153195 - Frame #54 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.154221 - original_frame: None
+2025-05-24T22:38:33.154221 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.155176 - Invalid frame: frame: None
+2025-05-24T22:38:33.185114 - Frame #55 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.185114 - original_frame: None
+2025-05-24T22:38:33.185114 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.186107 - Invalid frame: frame: None
+2025-05-24T22:38:33.293877 - Frame #56 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.294903 - original_frame: None
+2025-05-24T22:38:33.294903 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.295902 - Invalid frame: frame: None
+2025-05-24T22:38:33.302190 - Frame #57 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.303209 - original_frame: None
+2025-05-24T22:38:33.303209 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.303209 - Invalid frame: frame: None
+2025-05-24T22:38:33.398311 - Frame #58 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.399381 - original_frame: None
+2025-05-24T22:38:33.400362 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.401394 - Invalid frame: frame: None
+2025-05-24T22:38:33.402376 - Frame #59 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.403381 - original_frame: None
+2025-05-24T22:38:33.403381 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.404082 - Invalid frame: frame: None
+2025-05-24T22:38:33.529791 - Frame #60 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.532806 - original_frame: None
+2025-05-24T22:38:33.533801 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.538259 - Invalid frame: frame: None
+2025-05-24T22:38:33.540258 - Frame #61 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.541053 - original_frame: None
+2025-05-24T22:38:33.541053 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.545304 - Invalid frame: frame: None
+2025-05-24T22:38:33.677590 - Frame #62 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.677590 - original_frame: None
+2025-05-24T22:38:33.677590 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.679585 - Invalid frame: frame: None
+2025-05-24T22:38:33.680579 - Frame #63 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.680579 - original_frame: None
+2025-05-24T22:38:33.681863 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.683167 - Invalid frame: frame: None
+2025-05-24T22:38:33.817083 - Frame #64 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.818086 - original_frame: None
+2025-05-24T22:38:33.818086 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.819085 - Invalid frame: frame: None
+2025-05-24T22:38:33.819085 - Frame #65 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.820331 - original_frame: None
+2025-05-24T22:38:33.820331 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.820331 - Invalid frame: frame: None
+2025-05-24T22:38:33.936591 - Frame #66 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.937593 - original_frame: None
+2025-05-24T22:38:33.937593 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.938587 - Invalid frame: frame: None
+2025-05-24T22:38:33.939591 - Frame #67 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:33.939591 - original_frame: None
+2025-05-24T22:38:33.939591 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:33.940586 - Invalid frame: frame: None
+2025-05-24T22:38:34.065290 - Frame #68 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.066290 - original_frame: None
+2025-05-24T22:38:34.067301 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.068291 - Invalid frame: frame: None
+2025-05-24T22:38:34.068291 - Frame #69 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.068291 - original_frame: None
+2025-05-24T22:38:34.069290 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.069290 - Invalid frame: frame: None
+2025-05-24T22:38:34.199520 - Frame #70 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.200514 - original_frame: None
+2025-05-24T22:38:34.201513 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.203521 - Invalid frame: frame: None
+2025-05-24T22:38:34.203521 - Frame #71 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.204522 - original_frame: None
+2025-05-24T22:38:34.204522 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.206024 - Invalid frame: frame: None
+2025-05-24T22:38:34.313946 - Frame #72 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.314949 - original_frame: None
+2025-05-24T22:38:34.315944 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.316953 - Invalid frame: frame: None
+2025-05-24T22:38:34.316953 - Frame #73 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.316953 - original_frame: None
+2025-05-24T22:38:34.316953 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.318333 - Invalid frame: frame: None
+2025-05-24T22:38:34.484060 - Frame #74 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.485255 - original_frame: None
+2025-05-24T22:38:34.485255 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.487254 - Invalid frame: frame: None
+2025-05-24T22:38:34.487571 - Frame #75 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.488580 - original_frame: None
+2025-05-24T22:38:34.488580 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.489576 - Invalid frame: frame: None
+2025-05-24T22:38:34.607977 - Frame #76 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.607977 - original_frame: None
+2025-05-24T22:38:34.607977 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.609960 - Invalid frame: frame: None
+2025-05-24T22:38:34.610984 - Frame #77 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.610984 - original_frame: None
+2025-05-24T22:38:34.611971 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.611971 - Invalid frame: frame: None
+2025-05-24T22:38:34.611971 - Frame #78 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.614241 - original_frame: None
+2025-05-24T22:38:34.614241 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.614241 - Invalid frame: frame: None
+2025-05-24T22:38:34.732592 - Frame #79 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.734616 - original_frame: None
+2025-05-24T22:38:34.734927 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.743932 - Invalid frame: frame: None
+2025-05-24T22:38:34.745949 - Frame #80 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.747504 - original_frame: None
+2025-05-24T22:38:34.748519 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.749512 - Invalid frame: frame: None
+2025-05-24T22:38:34.879270 - Frame #81 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.880279 - original_frame: None
+2025-05-24T22:38:34.880279 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.882275 - Invalid frame: frame: None
+2025-05-24T22:38:34.883262 - Frame #82 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.883262 - original_frame: None
+2025-05-24T22:38:34.884262 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:34.884588 - Invalid frame: frame: None
+2025-05-24T22:38:34.998586 - Frame #83 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:34.999561 - original_frame: None
+2025-05-24T22:38:35.000574 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.001570 - Invalid frame: frame: None
+2025-05-24T22:38:35.002563 - Frame #84 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.002563 - original_frame: None
+2025-05-24T22:38:35.002563 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.003569 - Invalid frame: frame: None
+2025-05-24T22:38:35.145874 - Frame #85 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.145874 - original_frame: None
+2025-05-24T22:38:35.147178 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.148175 - Invalid frame: frame: None
+2025-05-24T22:38:35.148175 - Frame #86 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.149176 - original_frame: None
+2025-05-24T22:38:35.149176 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.150174 - Invalid frame: frame: None
+2025-05-24T22:38:35.301970 - Frame #87 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.302982 - original_frame: None
+2025-05-24T22:38:35.302982 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.303990 - Invalid frame: frame: None
+2025-05-24T22:38:35.304991 - Frame #88 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.304991 - original_frame: None
+2025-05-24T22:38:35.304991 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.305989 - Invalid frame: frame: None
+2025-05-24T22:38:35.417174 - Frame #89 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.418186 - original_frame: None
+2025-05-24T22:38:35.418186 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.419268 - Invalid frame: frame: None
+2025-05-24T22:38:35.419268 - Frame #90 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.419268 - original_frame: None
+2025-05-24T22:38:35.419268 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.420274 - Invalid frame: frame: None
+2025-05-24T22:38:35.602768 - Frame #91 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.603774 - original_frame: None
+2025-05-24T22:38:35.603774 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.604775 - Invalid frame: frame: None
+2025-05-24T22:38:35.604775 - Frame #92 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.604775 - original_frame: None
+2025-05-24T22:38:35.604775 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.605796 - Invalid frame: frame: None
+2025-05-24T22:38:35.605796 - Frame #93 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.606794 - original_frame: None
+2025-05-24T22:38:35.606794 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.607782 - Invalid frame: frame: None
+2025-05-24T22:38:35.683247 - Frame #94 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.684298 - original_frame: None
+2025-05-24T22:38:35.684298 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.685302 - Invalid frame: frame: None
+2025-05-24T22:38:35.686300 - Frame #95 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.686300 - original_frame: None
+2025-05-24T22:38:35.686300 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.687569 - Invalid frame: frame: None
+2025-05-24T22:38:35.812112 - Frame #96 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.812112 - original_frame: None
+2025-05-24T22:38:35.813136 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.815123 - Invalid frame: frame: None
+2025-05-24T22:38:35.815123 - Frame #97 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.815123 - original_frame: None
+2025-05-24T22:38:35.815123 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.816123 - Invalid frame: frame: None
+2025-05-24T22:38:35.927362 - Frame #98 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.928359 - original_frame: None
+2025-05-24T22:38:35.930363 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.932385 - Invalid frame: frame: None
+2025-05-24T22:38:35.933387 - Frame #99 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:35.934387 - original_frame: None
+2025-05-24T22:38:35.934768 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:35.936182 - Invalid frame: frame: None
+2025-05-24T22:38:36.097583 - Frame #100 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.099304 - original_frame: None
+2025-05-24T22:38:36.099304 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.101314 - Invalid frame: frame: None
+2025-05-24T22:38:36.127330 - Frame #101 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.127330 - original_frame: None
+2025-05-24T22:38:36.127330 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.127330 - Invalid frame: frame: None
+2025-05-24T22:38:36.189309 - Frame #102 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.190306 - original_frame: None
+2025-05-24T22:38:36.190306 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.191307 - Invalid frame: frame: None
+2025-05-24T22:38:36.191307 - Frame #103 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.191307 - original_frame: None
+2025-05-24T22:38:36.191307 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.192305 - Invalid frame: frame: None
+2025-05-24T22:38:36.309156 - Frame #104 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.310152 - original_frame: None
+2025-05-24T22:38:36.310152 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.311155 - Invalid frame: frame: None
+2025-05-24T22:38:36.312154 - Frame #105 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.312154 - original_frame: None
+2025-05-24T22:38:36.312154 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.312974 - Invalid frame: frame: None
+2025-05-24T22:38:36.460069 - Frame #106 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.460069 - original_frame: None
+2025-05-24T22:38:36.460069 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.461405 - Invalid frame: frame: None
+2025-05-24T22:38:36.461787 - Frame #107 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.461787 - original_frame: None
+2025-05-24T22:38:36.462383 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.462690 - Invalid frame: frame: None
+2025-05-24T22:38:36.633610 - Frame #108 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.635454 - original_frame: None
+2025-05-24T22:38:36.635454 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.637474 - Invalid frame: frame: None
+2025-05-24T22:38:36.637474 - Frame #109 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.637474 - original_frame: None
+2025-05-24T22:38:36.637474 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.638771 - Invalid frame: frame: None
+2025-05-24T22:38:36.639777 - Frame #110 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.639777 - original_frame: None
+2025-05-24T22:38:36.640274 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.640274 - Invalid frame: frame: None
+2025-05-24T22:38:36.750939 - Frame #111 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.751990 - original_frame: None
+2025-05-24T22:38:36.752419 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.755908 - Invalid frame: frame: None
+2025-05-24T22:38:36.756428 - Frame #112 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.756428 - original_frame: None
+2025-05-24T22:38:36.756428 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.757558 - Invalid frame: frame: None
+2025-05-24T22:38:36.922754 - Frame #113 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.923760 - original_frame: None
+2025-05-24T22:38:36.924777 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.925756 - Invalid frame: frame: None
+2025-05-24T22:38:36.926962 - Frame #114 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.926962 - original_frame: None
+2025-05-24T22:38:36.927975 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.927975 - Invalid frame: frame: None
+2025-05-24T22:38:36.929036 - Frame #115 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.929397 - original_frame: None
+2025-05-24T22:38:36.929397 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.930542 - Invalid frame: frame: None
+2025-05-24T22:38:36.984846 - Frame #116 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.985843 - original_frame: None
+2025-05-24T22:38:36.985843 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.986853 - Invalid frame: frame: None
+2025-05-24T22:38:36.987843 - Frame #117 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:36.988853 - original_frame: None
+2025-05-24T22:38:36.988853 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:36.990486 - Invalid frame: frame: None
+2025-05-24T22:38:37.162714 - Frame #118 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.162714 - original_frame: None
+2025-05-24T22:38:37.163730 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.164722 - Invalid frame: frame: None
+2025-05-24T22:38:37.165195 - Frame #119 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.165195 - original_frame: None
+2025-05-24T22:38:37.166181 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.166759 - Invalid frame: frame: None
+2025-05-24T22:38:37.166759 - Frame #120 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.167863 - original_frame: None
+2025-05-24T22:38:37.167863 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.168847 - Invalid frame: frame: None
+2025-05-24T22:38:37.283137 - Frame #121 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.284159 - original_frame: None
+2025-05-24T22:38:37.285144 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.287186 - Invalid frame: frame: None
+2025-05-24T22:38:37.287186 - Frame #122 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.287976 - original_frame: None
+2025-05-24T22:38:37.287976 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.289274 - Invalid frame: frame: None
+2025-05-24T22:38:37.363547 - Frame #123 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.364564 - original_frame: None
+2025-05-24T22:38:37.365572 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.367112 - Invalid frame: frame: None
+2025-05-24T22:38:37.368114 - Frame #124 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.369113 - original_frame: None
+2025-05-24T22:38:37.369113 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.371290 - Invalid frame: frame: None
+2025-05-24T22:38:37.373291 - Frame #125 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.374294 - original_frame: None
+2025-05-24T22:38:37.374294 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.375285 - Invalid frame: frame: None
+2025-05-24T22:38:37.595195 - Frame #126 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.597209 - original_frame: None
+2025-05-24T22:38:37.598206 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.600203 - Invalid frame: frame: None
+2025-05-24T22:38:37.600203 - Frame #127 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.602285 - original_frame: None
+2025-05-24T22:38:37.602285 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.602285 - Invalid frame: frame: None
+2025-05-24T22:38:37.603665 - Frame #128 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.603665 - original_frame: None
+2025-05-24T22:38:37.603665 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.603665 - Invalid frame: frame: None
+2025-05-24T22:38:37.663629 - Frame #129 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.663629 - original_frame: None
+2025-05-24T22:38:37.664624 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.664624 - Invalid frame: frame: None
+2025-05-24T22:38:37.710171 - Frame #130 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.711164 - original_frame: None
+2025-05-24T22:38:37.711727 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.711727 - Invalid frame: frame: None
+2025-05-24T22:38:37.831529 - Frame #131 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.831529 - original_frame: None
+2025-05-24T22:38:37.831529 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.832585 - Invalid frame: frame: None
+2025-05-24T22:38:37.833542 - Frame #132 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.833542 - original_frame: None
+2025-05-24T22:38:37.834536 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.835543 - Invalid frame: frame: None
+2025-05-24T22:38:37.882831 - Frame #133 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.882831 - original_frame: None
+2025-05-24T22:38:37.883829 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.884828 - Invalid frame: frame: None
+2025-05-24T22:38:37.928615 - Frame #134 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.929627 - original_frame: None
+2025-05-24T22:38:37.929627 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.930491 - Invalid frame: frame: None
+2025-05-24T22:38:37.930491 - Frame #135 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:37.931645 - original_frame: None
+2025-05-24T22:38:37.931645 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:37.931645 - Invalid frame: frame: None
+2025-05-24T22:38:38.090900 - Frame #136 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.090900 - original_frame: None
+2025-05-24T22:38:38.091913 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.092909 - Invalid frame: frame: None
+2025-05-24T22:38:38.092909 - Frame #137 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.093909 - original_frame: None
+2025-05-24T22:38:38.093909 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.094909 - Invalid frame: frame: None
+2025-05-24T22:38:38.217002 - Frame #138 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.218003 - original_frame: None
+2025-05-24T22:38:38.219001 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.220011 - Invalid frame: frame: None
+2025-05-24T22:38:38.220011 - Frame #139 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.221265 - original_frame: None
+2025-05-24T22:38:38.222260 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.222260 - Invalid frame: frame: None
+2025-05-24T22:38:38.341940 - Frame #140 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.342955 - original_frame: None
+2025-05-24T22:38:38.343952 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.344951 - Invalid frame: frame: None
+2025-05-24T22:38:38.345952 - Frame #141 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.347128 - original_frame: None
+2025-05-24T22:38:38.347128 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.349130 - Invalid frame: frame: None
+2025-05-24T22:38:38.479496 - Frame #142 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.480619 - original_frame: None
+2025-05-24T22:38:38.481616 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.482533 - Invalid frame: frame: None
+2025-05-24T22:38:38.482533 - Frame #143 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.482533 - original_frame: None
+2025-05-24T22:38:38.482533 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.483666 - Invalid frame: frame: None
+2025-05-24T22:38:38.593019 - Frame #144 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.594129 - original_frame: None
+2025-05-24T22:38:38.594129 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.595140 - Invalid frame: frame: None
+2025-05-24T22:38:38.596129 - Frame #145 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.596129 - original_frame: None
+2025-05-24T22:38:38.596129 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.598135 - Invalid frame: frame: None
+2025-05-24T22:38:38.723125 - Frame #146 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.724227 - original_frame: None
+2025-05-24T22:38:38.725222 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.726218 - Invalid frame: frame: None
+2025-05-24T22:38:38.726218 - Frame #147 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.726218 - original_frame: None
+2025-05-24T22:38:38.726218 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.727226 - Invalid frame: frame: None
+2025-05-24T22:38:38.891429 - Frame #148 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.891429 - original_frame: None
+2025-05-24T22:38:38.892442 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.893454 - Invalid frame: frame: None
+2025-05-24T22:38:38.906937 - Frame #149 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:38.907949 - original_frame: None
+2025-05-24T22:38:38.908950 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:38.910019 - Invalid frame: frame: None
+2025-05-24T22:38:39.004624 - Frame #150 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.005627 - original_frame: None
+2025-05-24T22:38:39.005627 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.007634 - Invalid frame: frame: None
+2025-05-24T22:38:39.007634 - Frame #151 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.007634 - original_frame: None
+2025-05-24T22:38:39.007634 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.008663 - Invalid frame: frame: None
+2025-05-24T22:38:39.154204 - Frame #152 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.155223 - original_frame: None
+2025-05-24T22:38:39.155223 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.157214 - Invalid frame: frame: None
+2025-05-24T22:38:39.157214 - Frame #153 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.157214 - original_frame: None
+2025-05-24T22:38:39.158215 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.160169 - Invalid frame: frame: None
+2025-05-24T22:38:39.163384 - Frame #154 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.164385 - original_frame: None
+2025-05-24T22:38:39.164385 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.166372 - Invalid frame: frame: None
+2025-05-24T22:38:39.308292 - Frame #155 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.308292 - original_frame: None
+2025-05-24T22:38:39.308292 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.309283 - Invalid frame: frame: None
+2025-05-24T22:38:39.309283 - Frame #156 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.310523 - original_frame: None
+2025-05-24T22:38:39.310523 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.311464 - Invalid frame: frame: None
+2025-05-24T22:38:39.311464 - Frame #157 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.311464 - original_frame: None
+2025-05-24T22:38:39.312761 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.313762 - Invalid frame: frame: None
+2025-05-24T22:38:39.414404 - Frame #158 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.415391 - original_frame: None
+2025-05-24T22:38:39.415765 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.416403 - Invalid frame: frame: None
+2025-05-24T22:38:39.417452 - Frame #159 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.417452 - original_frame: None
+2025-05-24T22:38:39.417855 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.418599 - Invalid frame: frame: None
+2025-05-24T22:38:39.540795 - Frame #160 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.541827 - original_frame: None
+2025-05-24T22:38:39.543806 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.544428 - Invalid frame: frame: None
+2025-05-24T22:38:39.545534 - Frame #161 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.546530 - original_frame: None
+2025-05-24T22:38:39.546530 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.547524 - Invalid frame: frame: None
+2025-05-24T22:38:39.678886 - Frame #162 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.679902 - original_frame: None
+2025-05-24T22:38:39.680897 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.681206 - Invalid frame: frame: None
+2025-05-24T22:38:39.682258 - Frame #163 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.682258 - original_frame: None
+2025-05-24T22:38:39.682258 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.684253 - Invalid frame: frame: None
+2025-05-24T22:38:39.833586 - Frame #164 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.834638 - original_frame: None
+2025-05-24T22:38:39.834638 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.835637 - Invalid frame: frame: None
+2025-05-24T22:38:39.835637 - Frame #165 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.835637 - original_frame: None
+2025-05-24T22:38:39.836448 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.836448 - Invalid frame: frame: None
+2025-05-24T22:38:39.929905 - Frame #166 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.931898 - original_frame: None
+2025-05-24T22:38:39.931898 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.933897 - Invalid frame: frame: None
+2025-05-24T22:38:39.933897 - Frame #167 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:39.934904 - original_frame: None
+2025-05-24T22:38:39.935597 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:39.936086 - Invalid frame: frame: None
+2025-05-24T22:38:40.083053 - Frame #168 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.083053 - original_frame: None
+2025-05-24T22:38:40.084053 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.084053 - Invalid frame: frame: None
+2025-05-24T22:38:40.085053 - Frame #169 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.085053 - original_frame: None
+2025-05-24T22:38:40.085053 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.086056 - Invalid frame: frame: None
+2025-05-24T22:38:40.086056 - Frame #170 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.086056 - original_frame: None
+2025-05-24T22:38:40.087075 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.087075 - Invalid frame: frame: None
+2025-05-24T22:38:40.200124 - Frame #171 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.201122 - original_frame: None
+2025-05-24T22:38:40.201122 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.202128 - Invalid frame: frame: None
+2025-05-24T22:38:40.202945 - Frame #172 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.202945 - original_frame: None
+2025-05-24T22:38:40.202945 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.203960 - Invalid frame: frame: None
+2025-05-24T22:38:40.358316 - Frame #173 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.358316 - original_frame: None
+2025-05-24T22:38:40.358316 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.359325 - Invalid frame: frame: None
+2025-05-24T22:38:40.359325 - Frame #174 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.359325 - original_frame: None
+2025-05-24T22:38:40.359325 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.360476 - Invalid frame: frame: None
+2025-05-24T22:38:40.360476 - Frame #175 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.360476 - original_frame: None
+2025-05-24T22:38:40.361469 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.361781 - Invalid frame: frame: None
+2025-05-24T22:38:40.464412 - Frame #176 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.464412 - original_frame: None
+2025-05-24T22:38:40.464412 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.466411 - Invalid frame: frame: None
+2025-05-24T22:38:40.473472 - Frame #177 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.473472 - original_frame: None
+2025-05-24T22:38:40.474715 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.474715 - Invalid frame: frame: None
+2025-05-24T22:38:40.615701 - Frame #178 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.615701 - original_frame: None
+2025-05-24T22:38:40.615701 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.616711 - Invalid frame: frame: None
+2025-05-24T22:38:40.617724 - Frame #179 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.618368 - original_frame: None
+2025-05-24T22:38:40.618368 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.618368 - Invalid frame: frame: None
+2025-05-24T22:38:40.773255 - Frame #180 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.773255 - original_frame: None
+2025-05-24T22:38:40.773255 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.774257 - Invalid frame: frame: None
+2025-05-24T22:38:40.774257 - Frame #181 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.774257 - original_frame: None
+2025-05-24T22:38:40.774257 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.775263 - Invalid frame: frame: None
+2025-05-24T22:38:40.775263 - Frame #182 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.775263 - original_frame: None
+2025-05-24T22:38:40.775263 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.776264 - Invalid frame: frame: None
+2025-05-24T22:38:40.902423 - Frame #183 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.902423 - original_frame: None
+2025-05-24T22:38:40.903432 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.904431 - Invalid frame: frame: None
+2025-05-24T22:38:40.905430 - Frame #184 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.905430 - original_frame: None
+2025-05-24T22:38:40.905430 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.906429 - Invalid frame: frame: None
+2025-05-24T22:38:40.972437 - Frame #185 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:40.973445 - original_frame: None
+2025-05-24T22:38:40.973445 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:40.974439 - Invalid frame: frame: None
+2025-05-24T22:38:41.044236 - Frame #186 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.045235 - original_frame: None
+2025-05-24T22:38:41.045235 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.046560 - Invalid frame: frame: None
+2025-05-24T22:38:41.047290 - Frame #187 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.047290 - original_frame: None
+2025-05-24T22:38:41.047290 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.048346 - Invalid frame: frame: None
+2025-05-24T22:38:41.134082 - Frame #188 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.135134 - original_frame: None
+2025-05-24T22:38:41.135134 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.135134 - Invalid frame: frame: None
+2025-05-24T22:38:41.181143 - Frame #189 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.182145 - original_frame: None
+2025-05-24T22:38:41.182145 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.183154 - Invalid frame: frame: None
+2025-05-24T22:38:41.264629 - Frame #190 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.265637 - original_frame: None
+2025-05-24T22:38:41.266631 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.266631 - Invalid frame: frame: None
+2025-05-24T22:38:41.267643 - Frame #191 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.267643 - original_frame: None
+2025-05-24T22:38:41.267643 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.268626 - Invalid frame: frame: None
+2025-05-24T22:38:41.382550 - Frame #192 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.382550 - original_frame: None
+2025-05-24T22:38:41.383558 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.383558 - Invalid frame: frame: None
+2025-05-24T22:38:41.500043 - Frame #193 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.501050 - original_frame: None
+2025-05-24T22:38:41.501050 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.502043 - Invalid frame: frame: None
+2025-05-24T22:38:41.503038 - Frame #194 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.503038 - original_frame: None
+2025-05-24T22:38:41.503038 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.504044 - Invalid frame: frame: None
+2025-05-24T22:38:41.505041 - Frame #195 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.505041 - original_frame: None
+2025-05-24T22:38:41.505041 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.506061 - Invalid frame: frame: None
+2025-05-24T22:38:41.697249 - Frame #196 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.698249 - original_frame: None
+2025-05-24T22:38:41.698249 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.699261 - Invalid frame: frame: None
+2025-05-24T22:38:41.699261 - Frame #197 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.699261 - original_frame: None
+2025-05-24T22:38:41.700255 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.700255 - Invalid frame: frame: None
+2025-05-24T22:38:41.700255 - Frame #198 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.701252 - original_frame: None
+2025-05-24T22:38:41.701252 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.701252 - Invalid frame: frame: None
+2025-05-24T22:38:41.848637 - Frame #199 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.849560 - original_frame: None
+2025-05-24T22:38:41.849560 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.850626 - Invalid frame: frame: None
+2025-05-24T22:38:41.850626 - Frame #200 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.850626 - original_frame: None
+2025-05-24T22:38:41.851559 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.851559 - Invalid frame: frame: None
+2025-05-24T22:38:41.851559 - Frame #201 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.851559 - original_frame: None
+2025-05-24T22:38:41.852562 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.852562 - Invalid frame: frame: None
+2025-05-24T22:38:41.950296 - Frame #202 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.950296 - original_frame: None
+2025-05-24T22:38:41.951306 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.951698 - Invalid frame: frame: None
+2025-05-24T22:38:41.951698 - Frame #203 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.952750 - original_frame: None
+2025-05-24T22:38:41.952750 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.952750 - Invalid frame: frame: None
+2025-05-24T22:38:41.953790 - Frame #204 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:41.954238 - original_frame: None
+2025-05-24T22:38:41.954238 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:41.954238 - Invalid frame: frame: None
+2025-05-24T22:38:42.075360 - Frame #205 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.075360 - original_frame: None
+2025-05-24T22:38:42.075360 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.077575 - Invalid frame: frame: None
+2025-05-24T22:38:42.077575 - Frame #206 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.077575 - original_frame: None
+2025-05-24T22:38:42.078588 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.078588 - Invalid frame: frame: None
+2025-05-24T22:38:42.137309 - Frame #207 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.137309 - original_frame: None
+2025-05-24T22:38:42.138307 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.138307 - Invalid frame: frame: None
+2025-05-24T22:38:42.214847 - Frame #208 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.215864 - original_frame: None
+2025-05-24T22:38:42.215864 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.216853 - Invalid frame: frame: None
+2025-05-24T22:38:42.216853 - Frame #209 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.216853 - original_frame: None
+2025-05-24T22:38:42.217865 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.217865 - Invalid frame: frame: None
+2025-05-24T22:38:42.352646 - Frame #210 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.353657 - original_frame: None
+2025-05-24T22:38:42.353657 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.354646 - Invalid frame: frame: None
+2025-05-24T22:38:42.354646 - Frame #211 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.355644 - original_frame: None
+2025-05-24T22:38:42.355644 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.356646 - Invalid frame: frame: None
+2025-05-24T22:38:42.451778 - Frame #212 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.452773 - original_frame: None
+2025-05-24T22:38:42.452773 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.454187 - Invalid frame: frame: None
+2025-05-24T22:38:42.455234 - Frame #213 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.455234 - original_frame: None
+2025-05-24T22:38:42.456230 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.457063 - Invalid frame: frame: None
+2025-05-24T22:38:42.649854 - Frame #214 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.650880 - original_frame: None
+2025-05-24T22:38:42.650880 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.651862 - Invalid frame: frame: None
+2025-05-24T22:38:42.651862 - Frame #215 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.652859 - original_frame: None
+2025-05-24T22:38:42.652859 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.652859 - Invalid frame: frame: None
+2025-05-24T22:38:42.744495 - Frame #216 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.745493 - original_frame: None
+2025-05-24T22:38:42.745493 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.746410 - Invalid frame: frame: None
+2025-05-24T22:38:42.747453 - Frame #217 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.747453 - original_frame: None
+2025-05-24T22:38:42.747453 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.748455 - Invalid frame: frame: None
+2025-05-24T22:38:42.928090 - Frame #218 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.929085 - original_frame: None
+2025-05-24T22:38:42.929085 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.929085 - Invalid frame: frame: None
+2025-05-24T22:38:42.930089 - Frame #219 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:42.930089 - original_frame: None
+2025-05-24T22:38:42.930089 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:42.930089 - Invalid frame: frame: None
+2025-05-24T22:38:43.007293 - Frame #220 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.008298 - original_frame: None
+2025-05-24T22:38:43.008298 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.009304 - Invalid frame: frame: None
+2025-05-24T22:38:43.009304 - Frame #221 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.009304 - original_frame: None
+2025-05-24T22:38:43.009304 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.010291 - Invalid frame: frame: None
+2025-05-24T22:38:43.102402 - Frame #222 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.102402 - original_frame: None
+2025-05-24T22:38:43.102402 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.103416 - Invalid frame: frame: None
+2025-05-24T22:38:43.103416 - Frame #223 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.104422 - original_frame: None
+2025-05-24T22:38:43.104422 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.106436 - Invalid frame: frame: None
+2025-05-24T22:38:43.106436 - Frame #224 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.106436 - original_frame: None
+2025-05-24T22:38:43.106436 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.107409 - Invalid frame: frame: None
+2025-05-24T22:38:43.196968 - Frame #225 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.198216 - original_frame: None
+2025-05-24T22:38:43.199639 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.200947 - Invalid frame: frame: None
+2025-05-24T22:38:43.285624 - Frame #226 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.285624 - original_frame: None
+2025-05-24T22:38:43.286666 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.287637 - Invalid frame: frame: None
+2025-05-24T22:38:43.287637 - Frame #227 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.287637 - original_frame: None
+2025-05-24T22:38:43.287637 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.288625 - Invalid frame: frame: None
+2025-05-24T22:38:43.390227 - Frame #228 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.391247 - original_frame: None
+2025-05-24T22:38:43.391247 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.393239 - Invalid frame: frame: None
+2025-05-24T22:38:43.394246 - Frame #229 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.394246 - original_frame: None
+2025-05-24T22:38:43.394246 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.395245 - Invalid frame: frame: None
+2025-05-24T22:38:43.500061 - Frame #230 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.501023 - original_frame: None
+2025-05-24T22:38:43.501023 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.501990 - Invalid frame: frame: None
+2025-05-24T22:38:43.572097 - Frame #231 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.572097 - original_frame: None
+2025-05-24T22:38:43.573327 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.573327 - Invalid frame: frame: None
+2025-05-24T22:38:43.664630 - Frame #232 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.666632 - original_frame: None
+2025-05-24T22:38:43.667637 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.668831 - Invalid frame: frame: None
+2025-05-24T22:38:43.671050 - Frame #233 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.671960 - original_frame: None
+2025-05-24T22:38:43.671960 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.672977 - Invalid frame: frame: None
+2025-05-24T22:38:43.819130 - Frame #234 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.820117 - original_frame: None
+2025-05-24T22:38:43.821853 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.824347 - Invalid frame: frame: None
+2025-05-24T22:38:43.824347 - Frame #235 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.825345 - original_frame: None
+2025-05-24T22:38:43.825345 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.826857 - Invalid frame: frame: None
+2025-05-24T22:38:43.930723 - Frame #236 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.931873 - original_frame: None
+2025-05-24T22:38:43.931873 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.933641 - Invalid frame: frame: None
+2025-05-24T22:38:43.934760 - Frame #237 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:43.934760 - original_frame: None
+2025-05-24T22:38:43.934760 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:43.936762 - Invalid frame: frame: None
+2025-05-24T22:38:44.046372 - Frame #238 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.046372 - original_frame: None
+2025-05-24T22:38:44.047382 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.048373 - Invalid frame: frame: None
+2025-05-24T22:38:44.049366 - Frame #239 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.049893 - original_frame: None
+2025-05-24T22:38:44.049893 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.051473 - Invalid frame: frame: None
+2025-05-24T22:38:44.196074 - Frame #240 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.197100 - original_frame: None
+2025-05-24T22:38:44.197100 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.199098 - Invalid frame: frame: None
+2025-05-24T22:38:44.200717 - Frame #241 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.201861 - original_frame: None
+2025-05-24T22:38:44.202164 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.203176 - Invalid frame: frame: None
+2025-05-24T22:38:44.343098 - Frame #242 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.344139 - original_frame: None
+2025-05-24T22:38:44.344139 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.345103 - Invalid frame: frame: None
+2025-05-24T22:38:44.346094 - Frame #243 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.346628 - original_frame: None
+2025-05-24T22:38:44.346628 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.348153 - Invalid frame: frame: None
+2025-05-24T22:38:44.488440 - Frame #244 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.489435 - original_frame: None
+2025-05-24T22:38:44.489435 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.489435 - Invalid frame: frame: None
+2025-05-24T22:38:44.490436 - Frame #245 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.490436 - original_frame: None
+2025-05-24T22:38:44.490436 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.491441 - Invalid frame: frame: None
+2025-05-24T22:38:44.634271 - Frame #246 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.635276 - original_frame: None
+2025-05-24T22:38:44.635276 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.636274 - Invalid frame: frame: None
+2025-05-24T22:38:44.637275 - Frame #247 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.637275 - original_frame: None
+2025-05-24T22:38:44.637275 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.637275 - Invalid frame: frame: None
+2025-05-24T22:38:44.638274 - Frame #248 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.638658 - original_frame: None
+2025-05-24T22:38:44.638658 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.639073 - Invalid frame: frame: None
+2025-05-24T22:38:44.773463 - Frame #249 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.774473 - original_frame: None
+2025-05-24T22:38:44.775471 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.776471 - Invalid frame: frame: None
+2025-05-24T22:38:44.776471 - Frame #250 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.777471 - original_frame: None
+2025-05-24T22:38:44.777471 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.778994 - Invalid frame: frame: None
+2025-05-24T22:38:44.778994 - Frame #251 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.778994 - original_frame: None
+2025-05-24T22:38:44.778994 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.778994 - Invalid frame: frame: None
+2025-05-24T22:38:44.857770 - Frame #252 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.858923 - original_frame: None
+2025-05-24T22:38:44.858923 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.859921 - Invalid frame: frame: None
+2025-05-24T22:38:44.860915 - Frame #253 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.860915 - original_frame: None
+2025-05-24T22:38:44.861995 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.862920 - Invalid frame: frame: None
+2025-05-24T22:38:44.950469 - Frame #254 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.951706 - original_frame: None
+2025-05-24T22:38:44.951706 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.952699 - Invalid frame: frame: None
+2025-05-24T22:38:44.995417 - Frame #255 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.995417 - original_frame: None
+2025-05-24T22:38:44.996499 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.997503 - Invalid frame: frame: None
+2025-05-24T22:38:44.997503 - Frame #256 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:44.997503 - original_frame: None
+2025-05-24T22:38:44.998503 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:44.999503 - Invalid frame: frame: None
+2025-05-24T22:38:45.142840 - Frame #257 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.143870 - original_frame: None
+2025-05-24T22:38:45.143870 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.145847 - Invalid frame: frame: None
+2025-05-24T22:38:45.145847 - Frame #258 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.145847 - original_frame: None
+2025-05-24T22:38:45.146848 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.147855 - Invalid frame: frame: None
+2025-05-24T22:38:45.257667 - Frame #259 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.258673 - original_frame: None
+2025-05-24T22:38:45.258673 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.260503 - Invalid frame: frame: None
+2025-05-24T22:38:45.261786 - Frame #260 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.261786 - original_frame: None
+2025-05-24T22:38:45.262772 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.263772 - Invalid frame: frame: None
+2025-05-24T22:38:45.421707 - Frame #261 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.422830 - original_frame: None
+2025-05-24T22:38:45.422830 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.423828 - Invalid frame: frame: None
+2025-05-24T22:38:45.423828 - Frame #262 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.423828 - original_frame: None
+2025-05-24T22:38:45.424826 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.424826 - Invalid frame: frame: None
+2025-05-24T22:38:45.553421 - Frame #263 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.554421 - original_frame: None
+2025-05-24T22:38:45.554421 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.555426 - Invalid frame: frame: None
+2025-05-24T22:38:45.555426 - Frame #264 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.556427 - original_frame: None
+2025-05-24T22:38:45.556427 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.557444 - Invalid frame: frame: None
+2025-05-24T22:38:45.683723 - Frame #265 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.684728 - original_frame: None
+2025-05-24T22:38:45.684728 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.685728 - Invalid frame: frame: None
+2025-05-24T22:38:45.744876 - Frame #266 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.746226 - original_frame: None
+2025-05-24T22:38:45.746226 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.748536 - Invalid frame: frame: None
+2025-05-24T22:38:45.799828 - Frame #267 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.799828 - original_frame: None
+2025-05-24T22:38:45.800832 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.810558 - Invalid frame: frame: None
+2025-05-24T22:38:45.815986 - Frame #268 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.816983 - original_frame: None
+2025-05-24T22:38:45.822716 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.830222 - Invalid frame: frame: None
+2025-05-24T22:38:45.909299 - Frame #269 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.909299 - original_frame: None
+2025-05-24T22:38:45.911318 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.911318 - Invalid frame: frame: None
+2025-05-24T22:38:45.912840 - Frame #270 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:45.912840 - original_frame: None
+2025-05-24T22:38:45.913851 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:45.917977 - Invalid frame: frame: None
+2025-05-24T22:38:46.075876 - Frame #271 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.076878 - original_frame: None
+2025-05-24T22:38:46.076878 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.077882 - Invalid frame: frame: None
+2025-05-24T22:38:46.078876 - Frame #272 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.078876 - original_frame: None
+2025-05-24T22:38:46.078876 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.079874 - Invalid frame: frame: None
+2025-05-24T22:38:46.211800 - Frame #273 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.212726 - original_frame: None
+2025-05-24T22:38:46.212726 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.215107 - Invalid frame: frame: None
+2025-05-24T22:38:46.216163 - Frame #274 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.216163 - original_frame: None
+2025-05-24T22:38:46.217164 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.217164 - Invalid frame: frame: None
+2025-05-24T22:38:46.355282 - Frame #275 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.355282 - original_frame: None
+2025-05-24T22:38:46.355282 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.356271 - Invalid frame: frame: None
+2025-05-24T22:38:46.357265 - Frame #276 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.357265 - original_frame: None
+2025-05-24T22:38:46.358278 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.358278 - Invalid frame: frame: None
+2025-05-24T22:38:46.467336 - Frame #277 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.469343 - original_frame: None
+2025-05-24T22:38:46.470342 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.471353 - Invalid frame: frame: None
+2025-05-24T22:38:46.472350 - Frame #278 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.472350 - original_frame: None
+2025-05-24T22:38:46.472936 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.473475 - Invalid frame: frame: None
+2025-05-24T22:38:46.620256 - Frame #279 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.621263 - original_frame: None
+2025-05-24T22:38:46.622257 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.623253 - Invalid frame: frame: None
+2025-05-24T22:38:46.624253 - Frame #280 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.624253 - original_frame: None
+2025-05-24T22:38:46.625251 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.626254 - Invalid frame: frame: None
+2025-05-24T22:38:46.734322 - Frame #281 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.735322 - original_frame: None
+2025-05-24T22:38:46.736329 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.737325 - Invalid frame: frame: None
+2025-05-24T22:38:46.738326 - Frame #282 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.738326 - original_frame: None
+2025-05-24T22:38:46.739330 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.739330 - Invalid frame: frame: None
+2025-05-24T22:38:46.879146 - Frame #283 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.880132 - original_frame: None
+2025-05-24T22:38:46.880132 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.881167 - Invalid frame: frame: None
+2025-05-24T22:38:46.881167 - Frame #284 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:46.882400 - original_frame: None
+2025-05-24T22:38:46.882400 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:46.884392 - Invalid frame: frame: None
+2025-05-24T22:38:47.006228 - Frame #285 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.007235 - original_frame: None
+2025-05-24T22:38:47.007235 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.009235 - Invalid frame: frame: None
+2025-05-24T22:38:47.011235 - Frame #286 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.012230 - original_frame: None
+2025-05-24T22:38:47.012230 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.015105 - Invalid frame: frame: None
+2025-05-24T22:38:47.162709 - Frame #287 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.163704 - original_frame: None
+2025-05-24T22:38:47.163704 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.164707 - Invalid frame: frame: None
+2025-05-24T22:38:47.164707 - Frame #288 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.164707 - original_frame: None
+2025-05-24T22:38:47.164707 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.165718 - Invalid frame: frame: None
+2025-05-24T22:38:47.205495 - Frame #289 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.206498 - original_frame: None
+2025-05-24T22:38:47.206498 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.207496 - Invalid frame: frame: None
+2025-05-24T22:38:47.284333 - Frame #290 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.285579 - original_frame: None
+2025-05-24T22:38:47.285579 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.286577 - Invalid frame: frame: None
+2025-05-24T22:38:47.287455 - Frame #291 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.287455 - original_frame: None
+2025-05-24T22:38:47.287455 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.288445 - Invalid frame: frame: None
+2025-05-24T22:38:47.401162 - Frame #292 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.402756 - original_frame: None
+2025-05-24T22:38:47.406033 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.406997 - Invalid frame: frame: None
+2025-05-24T22:38:47.408052 - Frame #293 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.408052 - original_frame: None
+2025-05-24T22:38:47.408052 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.410050 - Invalid frame: frame: None
+2025-05-24T22:38:47.525837 - Frame #294 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.526864 - original_frame: None
+2025-05-24T22:38:47.527891 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.528875 - Invalid frame: frame: None
+2025-05-24T22:38:47.528875 - Frame #295 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.528875 - original_frame: None
+2025-05-24T22:38:47.529872 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.529872 - Invalid frame: frame: None
+2025-05-24T22:38:47.646846 - Frame #296 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.647848 - original_frame: None
+2025-05-24T22:38:47.648852 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.649845 - Invalid frame: frame: None
+2025-05-24T22:38:47.649845 - Frame #297 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.649845 - original_frame: None
+2025-05-24T22:38:47.650843 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.650843 - Invalid frame: frame: None
+2025-05-24T22:38:47.808655 - Frame #298 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.810658 - original_frame: None
+2025-05-24T22:38:47.812655 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.813654 - Invalid frame: frame: None
+2025-05-24T22:38:47.814656 - Frame #299 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.814656 - original_frame: None
+2025-05-24T22:38:47.815652 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.816657 - Invalid frame: frame: None
+2025-05-24T22:38:47.936219 - Frame #300 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.937209 - original_frame: None
+2025-05-24T22:38:47.937209 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.938210 - Invalid frame: frame: None
+2025-05-24T22:38:47.939206 - Frame #301 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.939206 - original_frame: None
+2025-05-24T22:38:47.939206 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.940208 - Invalid frame: frame: None
+2025-05-24T22:38:47.940208 - Frame #302 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:47.941207 - original_frame: None
+2025-05-24T22:38:47.941207 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:47.941207 - Invalid frame: frame: None
+2025-05-24T22:38:48.049426 - Frame #303 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.050418 - original_frame: None
+2025-05-24T22:38:48.050418 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.051418 - Invalid frame: frame: None
+2025-05-24T22:38:48.051418 - Frame #304 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.052412 - original_frame: None
+2025-05-24T22:38:48.052412 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.052412 - Invalid frame: frame: None
+2025-05-24T22:38:48.211768 - Frame #305 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.213769 - original_frame: None
+2025-05-24T22:38:48.214767 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.216770 - Invalid frame: frame: None
+2025-05-24T22:38:48.218794 - Frame #306 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.219794 - original_frame: None
+2025-05-24T22:38:48.219794 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.220796 - Invalid frame: frame: None
+2025-05-24T22:38:48.326828 - Frame #307 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.327841 - original_frame: None
+2025-05-24T22:38:48.327841 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.328839 - Invalid frame: frame: None
+2025-05-24T22:38:48.330078 - Frame #308 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.331098 - original_frame: None
+2025-05-24T22:38:48.331098 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.331098 - Invalid frame: frame: None
+2025-05-24T22:38:48.441573 - Frame #309 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.442572 - original_frame: None
+2025-05-24T22:38:48.443968 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.445716 - Invalid frame: frame: None
+2025-05-24T22:38:48.446790 - Frame #310 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.446790 - original_frame: None
+2025-05-24T22:38:48.447432 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.447860 - Invalid frame: frame: None
+2025-05-24T22:38:48.640955 - Frame #311 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.642556 - original_frame: None
+2025-05-24T22:38:48.642556 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.643647 - Invalid frame: frame: None
+2025-05-24T22:38:48.643647 - Frame #312 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.644564 - original_frame: None
+2025-05-24T22:38:48.644564 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.645565 - Invalid frame: frame: None
+2025-05-24T22:38:48.667962 - Frame #313 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.669171 - original_frame: None
+2025-05-24T22:38:48.669171 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.670182 - Invalid frame: frame: None
+2025-05-24T22:38:48.747806 - Frame #314 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.748814 - original_frame: None
+2025-05-24T22:38:48.748814 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.749815 - Invalid frame: frame: None
+2025-05-24T22:38:48.750817 - Frame #315 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.750817 - original_frame: None
+2025-05-24T22:38:48.751886 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.752821 - Invalid frame: frame: None
+2025-05-24T22:38:48.830583 - Frame #316 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.831840 - original_frame: None
+2025-05-24T22:38:48.831840 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.831840 - Invalid frame: frame: None
+2025-05-24T22:38:48.862500 - Frame #317 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.863541 - original_frame: None
+2025-05-24T22:38:48.863541 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.864540 - Invalid frame: frame: None
+2025-05-24T22:38:48.864540 - Frame #318 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.865703 - original_frame: None
+2025-05-24T22:38:48.865703 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.865703 - Invalid frame: frame: None
+2025-05-24T22:38:48.975143 - Frame #319 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:48.975143 - original_frame: None
+2025-05-24T22:38:48.976160 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:48.976160 - Invalid frame: frame: None
+2025-05-24T22:38:49.031897 - Frame #320 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.031897 - original_frame: None
+2025-05-24T22:38:49.032743 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.033276 - Invalid frame: frame: None
+2025-05-24T22:38:49.166162 - Frame #321 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.168174 - original_frame: None
+2025-05-24T22:38:49.169461 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.169461 - Invalid frame: frame: None
+2025-05-24T22:38:49.169461 - Frame #322 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.170465 - original_frame: None
+2025-05-24T22:38:49.170465 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.170465 - Invalid frame: frame: None
+2025-05-24T22:38:49.256382 - Frame #323 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.258364 - original_frame: None
+2025-05-24T22:38:49.259361 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.260827 - Invalid frame: frame: None
+2025-05-24T22:38:49.261877 - Frame #324 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.261877 - original_frame: None
+2025-05-24T22:38:49.261877 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.263890 - Invalid frame: frame: None
+2025-05-24T22:38:49.332220 - Frame #325 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.334233 - original_frame: None
+2025-05-24T22:38:49.334233 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.335439 - Invalid frame: frame: None
+2025-05-24T22:38:49.417342 - Frame #326 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.418362 - original_frame: None
+2025-05-24T22:38:49.418362 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.419352 - Invalid frame: frame: None
+2025-05-24T22:38:49.420360 - Frame #327 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.420360 - original_frame: None
+2025-05-24T22:38:49.420360 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.421358 - Invalid frame: frame: None
+2025-05-24T22:38:49.421358 - Frame #328 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.421358 - original_frame: None
+2025-05-24T22:38:49.422357 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.423005 - Invalid frame: frame: None
+2025-05-24T22:38:49.570721 - Frame #329 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.571723 - original_frame: None
+2025-05-24T22:38:49.572725 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.573719 - Invalid frame: frame: None
+2025-05-24T22:38:49.573719 - Frame #330 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.573719 - original_frame: None
+2025-05-24T22:38:49.574722 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.574722 - Invalid frame: frame: None
+2025-05-24T22:38:49.574722 - Frame #331 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.574722 - original_frame: None
+2025-05-24T22:38:49.578458 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.579468 - Invalid frame: frame: None
+2025-05-24T22:38:49.653087 - Frame #332 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.654078 - original_frame: None
+2025-05-24T22:38:49.654078 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.656073 - Invalid frame: frame: None
+2025-05-24T22:38:49.656073 - Frame #333 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.656073 - original_frame: None
+2025-05-24T22:38:49.656073 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.657072 - Invalid frame: frame: None
+2025-05-24T22:38:49.852343 - Frame #334 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.853348 - original_frame: None
+2025-05-24T22:38:49.853348 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.854346 - Invalid frame: frame: None
+2025-05-24T22:38:49.854346 - Frame #335 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.855350 - original_frame: None
+2025-05-24T22:38:49.855350 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.857358 - Invalid frame: frame: None
+2025-05-24T22:38:49.857358 - Frame #336 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.859589 - original_frame: None
+2025-05-24T22:38:49.859589 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.861617 - Invalid frame: frame: None
+2025-05-24T22:38:49.955938 - Frame #337 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:49.955938 - original_frame: None
+2025-05-24T22:38:49.957021 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:49.957961 - Invalid frame: frame: None
+2025-05-24T22:38:50.012681 - Frame #338 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.013961 - original_frame: None
+2025-05-24T22:38:50.013961 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.015467 - Invalid frame: frame: None
+2025-05-24T22:38:50.015467 - Frame #339 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.015467 - original_frame: None
+2025-05-24T22:38:50.016547 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.016547 - Invalid frame: frame: None
+2025-05-24T22:38:50.238183 - Frame #340 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.239209 - original_frame: None
+2025-05-24T22:38:50.240194 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.241159 - Invalid frame: frame: None
+2025-05-24T22:38:50.241159 - Frame #341 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.241159 - original_frame: None
+2025-05-24T22:38:50.242205 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.243209 - Invalid frame: frame: None
+2025-05-24T22:38:50.289336 - Frame #342 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.290328 - original_frame: None
+2025-05-24T22:38:50.290328 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.291324 - Invalid frame: frame: None
+2025-05-24T22:38:50.291324 - Frame #343 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.292324 - original_frame: None
+2025-05-24T22:38:50.292324 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.293326 - Invalid frame: frame: None
+2025-05-24T22:38:50.311021 - Frame #344 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.312537 - original_frame: None
+2025-05-24T22:38:50.312537 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.312537 - Invalid frame: frame: None
+2025-05-24T22:38:50.493082 - Frame #345 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.496102 - original_frame: None
+2025-05-24T22:38:50.496102 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.497100 - Invalid frame: frame: None
+2025-05-24T22:38:50.498093 - Frame #346 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.498093 - original_frame: None
+2025-05-24T22:38:50.499097 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.499097 - Invalid frame: frame: None
+2025-05-24T22:38:50.501324 - Frame #347 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.503349 - original_frame: None
+2025-05-24T22:38:50.503349 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.503349 - Invalid frame: frame: None
+2025-05-24T22:38:50.625663 - Frame #348 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.626675 - original_frame: None
+2025-05-24T22:38:50.626675 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.627672 - Invalid frame: frame: None
+2025-05-24T22:38:50.711123 - Frame #349 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.712345 - original_frame: None
+2025-05-24T22:38:50.712345 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.713340 - Invalid frame: frame: None
+2025-05-24T22:38:50.714338 - Frame #350 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.714338 - original_frame: None
+2025-05-24T22:38:50.714338 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.715777 - Invalid frame: frame: None
+2025-05-24T22:38:50.715777 - Frame #351 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.715777 - original_frame: None
+2025-05-24T22:38:50.715777 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.715777 - Invalid frame: frame: None
+2025-05-24T22:38:50.864077 - Frame #352 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.864077 - original_frame: None
+2025-05-24T22:38:50.865378 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.866367 - Invalid frame: frame: None
+2025-05-24T22:38:50.867156 - Frame #353 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:50.867156 - original_frame: None
+2025-05-24T22:38:50.867156 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:50.868164 - Invalid frame: frame: None
+2025-05-24T22:38:51.032259 - Frame #354 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.032259 - original_frame: None
+2025-05-24T22:38:51.032259 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.033334 - Invalid frame: frame: None
+2025-05-24T22:38:51.033334 - Frame #355 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.034266 - original_frame: None
+2025-05-24T22:38:51.034266 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.034266 - Invalid frame: frame: None
+2025-05-24T22:38:51.186200 - Frame #356 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.189076 - original_frame: None
+2025-05-24T22:38:51.190098 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.192092 - Invalid frame: frame: None
+2025-05-24T22:38:51.192822 - Frame #357 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.192822 - original_frame: None
+2025-05-24T22:38:51.194008 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.195760 - Invalid frame: frame: None
+2025-05-24T22:38:51.342066 - Frame #358 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.343083 - original_frame: None
+2025-05-24T22:38:51.343083 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.344497 - Invalid frame: frame: None
+2025-05-24T22:38:51.344497 - Frame #359 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.345494 - original_frame: None
+2025-05-24T22:38:51.345494 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.346488 - Invalid frame: frame: None
+2025-05-24T22:38:51.346488 - Frame #360 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.346488 - original_frame: None
+2025-05-24T22:38:51.347491 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.348496 - Invalid frame: frame: None
+2025-05-24T22:38:51.348496 - Frame #361 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.349491 - original_frame: None
+2025-05-24T22:38:51.349491 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.350438 - Invalid frame: frame: None
+2025-05-24T22:38:51.550803 - Frame #362 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.552272 - original_frame: None
+2025-05-24T22:38:51.552272 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.552272 - Invalid frame: frame: None
+2025-05-24T22:38:51.553283 - Frame #363 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.553283 - original_frame: None
+2025-05-24T22:38:51.553283 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.554283 - Invalid frame: frame: None
+2025-05-24T22:38:51.682869 - Frame #364 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.683921 - original_frame: None
+2025-05-24T22:38:51.683921 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.684903 - Invalid frame: frame: None
+2025-05-24T22:38:51.685983 - Frame #365 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.686298 - original_frame: None
+2025-05-24T22:38:51.686298 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.686298 - Invalid frame: frame: None
+2025-05-24T22:38:51.686298 - Frame #366 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.686298 - original_frame: None
+2025-05-24T22:38:51.688078 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.689090 - Invalid frame: frame: None
+2025-05-24T22:38:51.810191 - Frame #367 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.812202 - original_frame: None
+2025-05-24T22:38:51.812202 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.814211 - Invalid frame: frame: None
+2025-05-24T22:38:51.878855 - Frame #368 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.879866 - original_frame: None
+2025-05-24T22:38:51.880863 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.881903 - Invalid frame: frame: None
+2025-05-24T22:38:51.882877 - Frame #369 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:51.883872 - original_frame: None
+2025-05-24T22:38:51.883872 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:51.884882 - Invalid frame: frame: None
+2025-05-24T22:38:52.090419 - Frame #370 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.092481 - original_frame: None
+2025-05-24T22:38:52.092481 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.093514 - Invalid frame: frame: None
+2025-05-24T22:38:52.093514 - Frame #371 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.093514 - original_frame: None
+2025-05-24T22:38:52.094495 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.094846 - Invalid frame: frame: None
+2025-05-24T22:38:52.094846 - Frame #372 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.095901 - original_frame: None
+2025-05-24T22:38:52.095901 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.096907 - Invalid frame: frame: None
+2025-05-24T22:38:52.204084 - Frame #373 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.204084 - original_frame: None
+2025-05-24T22:38:52.205061 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.205061 - Invalid frame: frame: None
+2025-05-24T22:38:52.205061 - Frame #374 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.205061 - original_frame: None
+2025-05-24T22:38:52.205061 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.205061 - Invalid frame: frame: None
+2025-05-24T22:38:52.325398 - Frame #375 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.325398 - original_frame: None
+2025-05-24T22:38:52.325398 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.325398 - Invalid frame: frame: None
+2025-05-24T22:38:52.460889 - Frame #376 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.461909 - original_frame: None
+2025-05-24T22:38:52.462900 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.462900 - Invalid frame: frame: None
+2025-05-24T22:38:52.463934 - Frame #377 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.463934 - original_frame: None
+2025-05-24T22:38:52.463934 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.463934 - Invalid frame: frame: None
+2025-05-24T22:38:52.668144 - Frame #378 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.669804 - original_frame: None
+2025-05-24T22:38:52.669804 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.670815 - Invalid frame: frame: None
+2025-05-24T22:38:52.671816 - Frame #379 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.671816 - original_frame: None
+2025-05-24T22:38:52.672812 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.673818 - Invalid frame: frame: None
+2025-05-24T22:38:52.735086 - Frame #380 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.736700 - original_frame: None
+2025-05-24T22:38:52.737033 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.738041 - Invalid frame: frame: None
+2025-05-24T22:38:52.837771 - Frame #381 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.838418 - original_frame: None
+2025-05-24T22:38:52.838418 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.839444 - Invalid frame: frame: None
+2025-05-24T22:38:52.839444 - Frame #382 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.840424 - original_frame: None
+2025-05-24T22:38:52.840424 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.840424 - Invalid frame: frame: None
+2025-05-24T22:38:52.910545 - Frame #383 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:52.910545 - original_frame: None
+2025-05-24T22:38:52.911931 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:52.912508 - Invalid frame: frame: None
+2025-05-24T22:38:53.036877 - Frame #384 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.038550 - original_frame: None
+2025-05-24T22:38:53.038550 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.039255 - Invalid frame: frame: None
+2025-05-24T22:38:53.040019 - Frame #385 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.040019 - original_frame: None
+2025-05-24T22:38:53.040019 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.041379 - Invalid frame: frame: None
+2025-05-24T22:38:53.135407 - Frame #386 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.136485 - original_frame: None
+2025-05-24T22:38:53.136485 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.136485 - Invalid frame: frame: None
+2025-05-24T22:38:53.255894 - Frame #387 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.257915 - original_frame: None
+2025-05-24T22:38:53.257915 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.260536 - Invalid frame: frame: None
+2025-05-24T22:38:53.261525 - Frame #388 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.261525 - original_frame: None
+2025-05-24T22:38:53.262525 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.263524 - Invalid frame: frame: None
+2025-05-24T22:38:53.363583 - Frame #389 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.364882 - original_frame: None
+2025-05-24T22:38:53.364882 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.365893 - Invalid frame: frame: None
+2025-05-24T22:38:53.366899 - Frame #390 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.366899 - original_frame: None
+2025-05-24T22:38:53.366899 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.368584 - Invalid frame: frame: None
+2025-05-24T22:38:53.532715 - Frame #391 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.532715 - original_frame: None
+2025-05-24T22:38:53.534308 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.535152 - Invalid frame: frame: None
+2025-05-24T22:38:53.703919 - Frame #392 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.705804 - original_frame: None
+2025-05-24T22:38:53.705804 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.706824 - Invalid frame: frame: None
+2025-05-24T22:38:53.707837 - Frame #393 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.708833 - original_frame: None
+2025-05-24T22:38:53.708833 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.709667 - Invalid frame: frame: None
+2025-05-24T22:38:53.709997 - Frame #394 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.709997 - original_frame: None
+2025-05-24T22:38:53.709997 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.712033 - Invalid frame: frame: None
+2025-05-24T22:38:53.824876 - Frame #395 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.825862 - original_frame: None
+2025-05-24T22:38:53.825862 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.826746 - Invalid frame: frame: None
+2025-05-24T22:38:53.826746 - Frame #396 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.826746 - original_frame: None
+2025-05-24T22:38:53.826746 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.827751 - Invalid frame: frame: None
+2025-05-24T22:38:53.921101 - Frame #397 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:53.921101 - original_frame: None
+2025-05-24T22:38:53.922131 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:53.922131 - Invalid frame: frame: None
+2025-05-24T22:38:54.061050 - Frame #398 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.063058 - original_frame: None
+2025-05-24T22:38:54.063058 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.064057 - Invalid frame: frame: None
+2025-05-24T22:38:54.065058 - Frame #399 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.065058 - original_frame: None
+2025-05-24T22:38:54.066446 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.067409 - Invalid frame: frame: None
+2025-05-24T22:38:54.167123 - Frame #400 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.168113 - original_frame: None
+2025-05-24T22:38:54.168113 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.169060 - Invalid frame: frame: None
+2025-05-24T22:38:54.169060 - Frame #401 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.169060 - original_frame: None
+2025-05-24T22:38:54.169060 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.170785 - Invalid frame: frame: None
+2025-05-24T22:38:54.352187 - Frame #402 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.352187 - original_frame: None
+2025-05-24T22:38:54.353534 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.353534 - Invalid frame: frame: None
+2025-05-24T22:38:54.488401 - Frame #403 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.491184 - original_frame: None
+2025-05-24T22:38:54.492192 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.492192 - Invalid frame: frame: None
+2025-05-24T22:38:54.493399 - Frame #404 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.493399 - original_frame: None
+2025-05-24T22:38:54.493399 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.493399 - Invalid frame: frame: None
+2025-05-24T22:38:54.494401 - Frame #405 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.494401 - original_frame: None
+2025-05-24T22:38:54.494401 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.494401 - Invalid frame: frame: None
+2025-05-24T22:38:54.616366 - Frame #406 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.617953 - original_frame: None
+2025-05-24T22:38:54.617953 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.617953 - Invalid frame: frame: None
+2025-05-24T22:38:54.618964 - Frame #407 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.618964 - original_frame: None
+2025-05-24T22:38:54.618964 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.618964 - Invalid frame: frame: None
+2025-05-24T22:38:54.739347 - Frame #408 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.739347 - original_frame: None
+2025-05-24T22:38:54.739347 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.740725 - Invalid frame: frame: None
+2025-05-24T22:38:54.852935 - Frame #409 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.853951 - original_frame: None
+2025-05-24T22:38:54.854954 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.855958 - Invalid frame: frame: None
+2025-05-24T22:38:54.855958 - Frame #410 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.856954 - original_frame: None
+2025-05-24T22:38:54.856954 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.857961 - Invalid frame: frame: None
+2025-05-24T22:38:54.990094 - Frame #411 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.991842 - original_frame: None
+2025-05-24T22:38:54.991842 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.992851 - Invalid frame: frame: None
+2025-05-24T22:38:54.992851 - Frame #412 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:54.993903 - original_frame: None
+2025-05-24T22:38:54.993903 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:54.993903 - Invalid frame: frame: None
+2025-05-24T22:38:55.114890 - Frame #413 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:55.115985 - original_frame: None
+2025-05-24T22:38:55.115985 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:55.116997 - Invalid frame: frame: None
+2025-05-24T22:38:55.235535 - Frame #414 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:55.236525 - original_frame: None
+2025-05-24T22:38:55.236525 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:55.237524 - Invalid frame: frame: None
+2025-05-24T22:38:55.237524 - Frame #415 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:55.237524 - original_frame: None
+2025-05-24T22:38:55.237524 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:55.239540 - Invalid frame: frame: None
+2025-05-24T22:38:55.374745 - Frame #416 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:55.374745 - original_frame: None
+2025-05-24T22:38:55.374745 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:55.374745 - Invalid frame: frame: None
+2025-05-24T22:38:55.374745 - Frame #417 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:55.374745 - original_frame: None
+2025-05-24T22:38:55.374745 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:55.374745 - Invalid frame: frame: None
+2025-05-24T22:38:55.522890 - Frame #418 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:55.524432 - original_frame: None
+2025-05-24T22:38:55.524432 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:55.526443 - Invalid frame: frame: None
+2025-05-24T22:38:55.651250 - Frame #419 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:55.652256 - original_frame: None
+2025-05-24T22:38:55.652256 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:55.653253 - Invalid frame: frame: None
+2025-05-24T22:38:55.653253 - Frame #420 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:55.653865 - original_frame: None
+2025-05-24T22:38:55.653865 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:55.653865 - Invalid frame: frame: None
+2025-05-24T22:38:55.812665 - Frame #421 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:55.812665 - original_frame: None
+2025-05-24T22:38:55.812665 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:55.813895 - Invalid frame: frame: None
+2025-05-24T22:38:55.813895 - Frame #422 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:55.813895 - original_frame: None
+2025-05-24T22:38:55.815930 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:55.819791 - Invalid frame: frame: None
+2025-05-24T22:38:55.935601 - Frame #423 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:55.935601 - original_frame: None
+2025-05-24T22:38:55.936794 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:55.936794 - Invalid frame: frame: None
+2025-05-24T22:38:56.067576 - Frame #424 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.068755 - original_frame: None
+2025-05-24T22:38:56.068755 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.069790 - Invalid frame: frame: None
+2025-05-24T22:38:56.069790 - Frame #425 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.069790 - original_frame: None
+2025-05-24T22:38:56.069790 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.070769 - Invalid frame: frame: None
+2025-05-24T22:38:56.196070 - Frame #426 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.196070 - original_frame: None
+2025-05-24T22:38:56.197092 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.198079 - Invalid frame: frame: None
+2025-05-24T22:38:56.211539 - Frame #427 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.211539 - original_frame: None
+2025-05-24T22:38:56.211539 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.213547 - Invalid frame: frame: None
+2025-05-24T22:38:56.300065 - Frame #428 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.300065 - original_frame: None
+2025-05-24T22:38:56.300065 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.301805 - Invalid frame: frame: None
+2025-05-24T22:38:56.454713 - Frame #429 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.456030 - original_frame: None
+2025-05-24T22:38:56.456030 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.456995 - Invalid frame: frame: None
+2025-05-24T22:38:56.489747 - Frame #430 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.490864 - original_frame: None
+2025-05-24T22:38:56.490864 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.491865 - Invalid frame: frame: None
+2025-05-24T22:38:56.582445 - Frame #431 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.583451 - original_frame: None
+2025-05-24T22:38:56.583451 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.584217 - Invalid frame: frame: None
+2025-05-24T22:38:56.584803 - Frame #432 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.584803 - original_frame: None
+2025-05-24T22:38:56.584803 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.584803 - Invalid frame: frame: None
+2025-05-24T22:38:56.711757 - Frame #433 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.712822 - original_frame: None
+2025-05-24T22:38:56.712822 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.713472 - Invalid frame: frame: None
+2025-05-24T22:38:56.859326 - Frame #434 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.859326 - original_frame: None
+2025-05-24T22:38:56.859326 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.860347 - Invalid frame: frame: None
+2025-05-24T22:38:56.860347 - Frame #435 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.860347 - original_frame: None
+2025-05-24T22:38:56.861335 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.861335 - Invalid frame: frame: None
+2025-05-24T22:38:56.994079 - Frame #436 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:56.995087 - original_frame: None
+2025-05-24T22:38:56.995087 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:56.997086 - Invalid frame: frame: None
+2025-05-24T22:38:57.009991 - Frame #437 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:57.009991 - original_frame: None
+2025-05-24T22:38:57.009991 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:57.011000 - Invalid frame: frame: None
+2025-05-24T22:38:57.121583 - Frame #438 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:57.122572 - original_frame: None
+2025-05-24T22:38:57.122572 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:57.122572 - Invalid frame: frame: None
+2025-05-24T22:38:57.247269 - Frame #439 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:57.248266 - original_frame: None
+2025-05-24T22:38:57.248266 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:57.249264 - Invalid frame: frame: None
+2025-05-24T22:38:57.249264 - Frame #440 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:57.249264 - original_frame: None
+2025-05-24T22:38:57.250271 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:57.250271 - Invalid frame: frame: None
+2025-05-24T22:38:57.414713 - Frame #441 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:57.414713 - original_frame: None
+2025-05-24T22:38:57.415704 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:57.415704 - Invalid frame: frame: None
+2025-05-24T22:38:57.416705 - Frame #442 - Result keys: ['error', 'capture_fps', 'frame_index']
+2025-05-24T22:38:57.416705 - original_frame: None
+2025-05-24T22:38:57.416705 - Error in result: 'FaceDetector' object has no attribute 'detect_face'
+2025-05-24T22:38:57.417706 - Invalid frame: frame: None
+2025-05-24T22:38:58.150949 - Driver monitoring system stopped

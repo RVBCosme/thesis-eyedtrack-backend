@@ -1,0 +1,16 @@
+Debug log started at 2025-05-24T22:32:51.383726
+Python version: 3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]
+OpenCV version: 4.10.0
+NumPy version: 1.26.4
+2025-05-24T22:32:52.463112 - Driver monitoring system started
+2025-05-24T22:33:08.874726 - Frame #50 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T22:33:08.877744 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=0, max=233
+2025-05-24T22:33:20.952852 - Frame #100 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T22:33:20.953867 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=18, max=233
+2025-05-24T22:33:33.882503 - Frame #150 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T22:33:33.883986 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=17, max=238
+2025-05-24T22:33:49.489504 - Frame #200 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T22:33:49.492497 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=19, max=254
+2025-05-24T22:34:06.144160 - Frame #250 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T22:34:06.146148 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=16, max=255
+2025-05-24T22:34:17.053869 - Driver monitoring system stopped

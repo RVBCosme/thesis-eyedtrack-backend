@@ -1,0 +1,10 @@
+Debug log started at 2025-05-25T16:21:04.355585
+Python version: 3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]
+OpenCV version: 4.10.0
+NumPy version: 1.26.4
+2025-05-25T16:21:06.139854 - Driver monitoring system started
+2025-05-25T16:21:28.554063 - Frame #50 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-25T16:21:28.556076 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=11, max=142
+2025-05-25T16:21:41.084440 - Frame #100 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-25T16:21:41.085520 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=13, max=141
+2025-05-25T16:21:45.892166 - Driver monitoring system stopped

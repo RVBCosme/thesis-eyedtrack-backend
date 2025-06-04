@@ -1,0 +1,16 @@
+Debug log started at 2025-05-25T16:17:01.219289
+Python version: 3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]
+OpenCV version: 4.10.0
+NumPy version: 1.26.4
+2025-05-25T16:17:02.223007 - Driver monitoring system started
+2025-05-25T16:17:18.660813 - Frame #50 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-25T16:17:18.666178 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=6, max=255
+2025-05-25T16:17:28.107892 - Frame #100 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-25T16:17:28.107892 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=7, max=255
+2025-05-25T16:17:37.356789 - Frame #150 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-25T16:17:37.356789 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=15, max=166
+2025-05-25T16:17:48.567503 - Frame #200 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-25T16:17:48.567503 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=14, max=174
+2025-05-25T16:18:00.606607 - Frame #250 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-25T16:18:00.606607 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=6, max=174
+2025-05-25T16:18:03.575323 - Driver monitoring system stopped

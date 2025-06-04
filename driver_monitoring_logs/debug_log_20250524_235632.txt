@@ -1,0 +1,40 @@
+Debug log started at 2025-05-24T23:56:32.176481
+Python version: 3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]
+OpenCV version: 4.10.0
+NumPy version: 1.26.4
+2025-05-24T23:56:33.142729 - Driver monitoring system started
+2025-05-24T23:56:53.645141 - Frame #50 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:56:53.647136 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=24, max=255
+2025-05-24T23:57:06.073550 - Frame #100 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:57:06.074552 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=23, max=255
+2025-05-24T23:57:19.325638 - Frame #150 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:57:19.326635 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=22, max=255
+2025-05-24T23:57:31.641483 - Frame #200 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:57:31.642490 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=16, max=255
+2025-05-24T23:57:43.629472 - Frame #250 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:57:43.630467 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=17, max=255
+2025-05-24T23:57:57.984531 - Frame #300 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:57:57.985526 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=18, max=255
+2025-05-24T23:58:10.435381 - Frame #350 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:58:10.437386 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=18, max=255
+2025-05-24T23:58:25.228079 - Frame #400 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:58:25.229085 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=18, max=255
+2025-05-24T23:58:39.146088 - Frame #450 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:58:39.147319 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=0, max=255
+2025-05-24T23:58:53.520655 - Frame #500 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:58:53.521660 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=7, max=255
+2025-05-24T23:59:06.597946 - Frame #550 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:59:06.598947 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=17, max=255
+2025-05-24T23:59:21.329854 - Frame #600 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:59:21.330860 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=18, max=255
+2025-05-24T23:59:37.259062 - Frame #650 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:59:37.260063 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=15, max=255
+2025-05-24T23:59:51.716196 - Frame #700 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-24T23:59:51.717196 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=6, max=255
+2025-05-25T00:00:06.083209 - Frame #750 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-25T00:00:06.084214 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=9, max=255
+2025-05-25T00:00:17.753113 - Frame #800 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-25T00:00:17.754112 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=21, max=255
+2025-05-25T00:00:31.575914 - Frame #850 - Result keys: ['original_frame', 'face_box', 'landmarks', 'head_pose', 'ear', 'mar', 'is_drowsy', 'is_yawning', 'is_distracted', 'is_risky', 'behavior', 'behavior_confidence', 'capture_fps', 'frame_index']
+2025-05-25T00:00:31.576913 - original_frame: ndarray shape=(480, 640, 3), dtype=uint8, min=12, max=255
+2025-05-25T00:00:33.441370 - Driver monitoring system stopped
