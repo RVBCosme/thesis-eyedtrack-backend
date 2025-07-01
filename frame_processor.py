@@ -134,7 +134,7 @@ class OptimizedFrameProcessor:
                 mar = analysis_result["metrics"]["mar"]
                 yaw = analysis_result["metrics"]["yaw"]
                 pitch = analysis_result["metrics"]["pitch"]
-                head_pose = [pitch, yaw, 0.0]
+                head_pose = [yaw, pitch, 0.0]
                 
                 # Extract behaviors (ImprovedFaceAnalyzer already handles thresholds)
                 is_drowsy = analysis_result["behaviors"]["is_drowsy"]

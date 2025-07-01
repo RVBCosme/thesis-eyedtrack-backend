@@ -250,8 +250,8 @@ def get_latest_behavior():
         ear = metrics.get("ear", 0)
         mar = metrics.get("mar", 0)
         head_pose = metrics.get("head_pose", [0, 0, 0])
-        yaw = head_pose[1] if len(head_pose) > 1 else 0
-        pitch = head_pose[0] if len(head_pose) > 0 else 0
+        yaw = head_pose[0] if len(head_pose) > 0 else 0
+        pitch = head_pose[1] if len(head_pose) > 1 else 0
         
         if is_drowsy or is_yawning or is_distracted:
             behaviors = []
@@ -317,38 +317,40 @@ def process_frame():
         result = frame_processor.process_frame(frame)
         logger.debug("Frame processing result: %s", result)
         
-        # Format behaviors for response
+        # Format behaviors for response - FIX: Extract from correct structure
         behaviors = []
-        if result.get('is_drowsy', False):
+        behavior_category = result.get('behavior_category', {})
+        if behavior_category.get('is_drowsy', False):
             behaviors.append('drowsy')
-        if result.get('is_yawning', False):
+        if behavior_category.get('is_yawning', False):
             behaviors.append('yawning')
-        if result.get('is_distracted', False):
+        if behavior_category.get('is_distracted', False):
             behaviors.append('distracted')
             
         # Log events if behaviors detected
         if behaviors:
-            log_event({
+            # Fixed: Use correct log_event signature (log_dir, event_type, event_data)
+            event_data = {
                 'session_id': session_id,
                 'timestamp': datetime.now().isoformat(),
-                'behaviors': behaviors,
-                'metrics': {
-                    'ear': result.get('ear', 0),
-                    'mar': result.get('mar', 0),
-                    'head_pose': result.get('head_pose', None)
-                }
-            })
+                'behavior_category': behavior_category,
+                'metrics': result.get('metrics', {}),
+                'behavior_confidence': result.get('behavior_confidence', 0.0)
+            }
+            event_type = "risky_behavior"
+            log_event(log_dir, event_type, event_data)
             
-        # Format response for frontend
+        # Format response for frontend - FIX: Extract metrics correctly
+        metrics = result.get('metrics', {})
         response = {
             'success': True,
             'session_id': session_id,
             'timestamp': datetime.now().isoformat(),
             'behaviors': behaviors,
             'metrics': {
-                'ear': result.get('ear', 0),
-                'mar': result.get('mar', 0),
-                'head_pose': result.get('head_pose', None)
+                'ear': metrics.get('ear', 0),
+                'mar': metrics.get('mar', 0),
+                'head_pose': metrics.get('head_pose', None)
             }
         }
         
