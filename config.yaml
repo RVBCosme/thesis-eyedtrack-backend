@@ -9,9 +9,12 @@ face_detection:
   use_cnn: false
   use_media_pipe: true
   use_media_pipe_mesh: true
-  min_face_size: [50, 50]
-  scale_factor: 1.05
-  min_neighbors: 5
+  min_face_size: [40, 40]
+  scale_factor: 1.1
+  min_neighbors: 3
+  enable_tracking: true
+  tracking_quality: 0.25
+  max_tracking_failures: 15
 
 clahe:
   enabled: true
@@ -23,30 +26,7 @@ clahe:
   homomorphic_low_gain: 0.7
   homomorphic_high_gain: 1.5
 
-thresholds:
-  ear_lower: 0.25
-  ear_upper: 0.30
-  mar_lower: 0.4
-  mar_upper: 0.6
-  drowsy_frames: 5
-  yawn_frames: 4
-  distraction_frames: 12
-  yaw_threshold: 45
-  pitch_threshold: 30
-  roll_threshold: 25
-
-behavior:
-  model_dir: "driver_behavior_model"
-  only_alert_on_risk: true
-  top_k: 3
-  temporal_smoothing: true
-  smoothing_window: 3
-  confidence_threshold: 0.3
-  use_llava: false
-  behavior_categories:
-    - "drowsy driver with eyes closing"
-    - "distracted driver looking away from road"
-    - "yawning driver showing fatigue"
+# Legacy thresholds section removed - now using detection section below
 
 logging:
   level: "DEBUG"
@@ -56,7 +36,7 @@ logging:
 
 display:
   show_fps: true
-  only_show_status_on_risk: false
+  only_show_status_on_risk: true
   show_landmarks: false
   show_head_pose: false
   show_alerts: true
@@ -64,26 +44,28 @@ display:
   alert_duration: 3.0
 
 performance:
-  skip_frames: 0
+  skip_frames: 1
   max_queue_size: 2
-  resize_factor: 1.0
+  resize_factor: 0.75
   use_threading: true
-  max_workers: 2
+  max_workers: 4
   enable_gpu: false
   camera_buffer_size: 1
   batch_size: 1
   profile_performance: false
   track_memory: false
+  use_roi: true
+  roi_margin: 75
 
 integration:
   api:
     enabled: true
     host: "0.0.0.0"
     port: 5000
-    base_url: ""
+    base_url: "192.168.68.109"
     api_key: ""
     cors_origins: ["*"]
-    allowed_hosts: ["localhost", "127.0.0.1", "10.0.2.2", "0.0.0.0", "*", "172.16.112.81", "192.168.1.11"]
+    allowed_hosts: ["localhost", "127.0.0.1", "10.0.2.2", "0.0.0.0", "*", "172.16.112.81", "192.168.68.109"]
   mqtt:
     enabled: false
     broker: "localhost"
@@ -107,12 +89,36 @@ gui:
 head_pose:
   use_kalman_filter: true
   stabilization_window: 5
-  confidence_threshold: 0.5
+  confidence_threshold: 0.4
   angle_smoothing: true
-  max_angle_change: 15.0
+  max_angle_change: 20.0
+  smoothing_alpha: 0.3
 
 robustness:
   lighting_adaptation: true
   error_recovery: true
   fallback_modes: true
-  automatic_recalibration: false
+  automatic_recalibration: true
+  max_recovery_attempts: 3
+
+detection:
+  # Enable improved dlib-based detection (more accurate)
+  use_improved_dlib: true
+  
+  # Use standalone ImprovedFaceAnalyzer (pure dlib, no MediaPipe fallback)
+  use_standalone_analyzer: true   # Set to true to use improved_detection.py
+  
+  # Eye aspect ratio threshold for drowsiness detection (more sensitive)
+  ear_threshold: 0.28  # Increased from 0.25 - detects drowsiness earlier
+  
+  # Mouth aspect ratio threshold for yawning detection (more sensitive)
+  mar_threshold: 0.50  # FIXED: Lowered from 0.58 to 0.50 - more sensitive yawn detection
+  
+  # Head pose thresholds for distraction detection (matching reference code)
+  yaw_threshold: 25    # Same as reference code - 25 degrees
+  pitch_threshold: 15  # Same as reference code - 15 degrees
+  
+  # Frame count thresholds (reduced for faster detection)
+  drowsy_frames_threshold: 5     # REDUCED: From 8 to 5 - faster drowsiness detection
+  yawn_frames_threshold: 8       # REDUCED: From 12 to 8 - faster yawning detection  
+  distraction_frames_threshold: 6  # REDUCED: From 10 to 6 - faster distraction detection

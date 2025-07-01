@@ -153,6 +153,18 @@ class HeadPoseEstimator:
             
             pitch, yaw, roll = [float(angle) for angle in euler_angles]
             
+            # Normalize angles to reasonable ranges [-180, 180]
+            def normalize_angle(angle):
+                while angle > 180:
+                    angle -= 360
+                while angle < -180:
+                    angle += 360
+                return angle
+                
+            yaw = normalize_angle(yaw)
+            pitch = normalize_angle(pitch)
+            roll = normalize_angle(roll)
+            
             # Apply Kalman filtering if enabled
             if self.use_kalman:
                 measurement = np.array([[pitch], [yaw], [roll]], np.float32)

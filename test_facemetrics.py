@@ -24,7 +24,9 @@ from face_analysis.ear_mar import (
     mouth_aspect_ratio,
     get_facial_state,
     get_eye_state,
-    get_mouth_state
+    get_mouth_state,
+    normalize_value,
+    configure_thresholds
 )
 
 # Configure logging
@@ -376,4 +378,168 @@ if __name__ == "__main__":
         logger.info("Face metrics evaluation completed successfully!")
     except Exception as e:
         logger.error(f"Error: {str(e)}")
-        raise 
+        raise
+
+"""Test face metrics calculations"""
+
+import unittest
+import numpy as np
+from face_analysis.ear_mar import (
+    eye_aspect_ratio, 
+    mouth_aspect_ratio,
+    normalize_value,
+    get_facial_state,
+    configure_thresholds
+)
+
+class TestFaceMetrics(unittest.TestCase):
+    def setUp(self):
+        # Reset thresholds to default values
+        configure_thresholds(
+            ear_lower=0.15,
+            ear_upper=0.35,
+            mar_lower=0.20,
+            mar_upper=0.65
+        )
+
+    def test_eye_aspect_ratio_normal(self):
+        """Test EAR calculation with normal values"""
+        # Simulate eye points for open eye (EAR ≈ 0.3)
+        eye_points = np.array([
+            [0, 0],    # P1
+            [0, 2],    # P2
+            [0, 4],    # P3
+            [10, 0],   # P4
+            [10, 2],   # P5
+            [10, 4]    # P6
+        ])
+        ear = eye_aspect_ratio(eye_points)
+        self.assertIsNotNone(ear)
+        self.assertTrue(0.15 <= ear <= 0.35)
+
+    def test_eye_aspect_ratio_closed(self):
+        """Test EAR calculation with nearly closed eye"""
+        # Simulate eye points for nearly closed eye (EAR ≈ 0.15)
+        eye_points = np.array([
+            [0, 0],    # P1
+            [0, 1],    # P2
+            [0, 2],    # P3
+            [10, 0],   # P4
+            [10, 1],   # P5
+            [10, 2]    # P6
+        ])
+        ear = eye_aspect_ratio(eye_points)
+        self.assertIsNotNone(ear)
+        self.assertGreaterEqual(ear, 0.1)
+        self.assertLessEqual(ear, 0.2)
+
+    def test_eye_aspect_ratio_invalid(self):
+        """Test EAR calculation with invalid inputs"""
+        # Test None input
+        self.assertIsNone(eye_aspect_ratio(None))
+
+        # Test invalid points
+        invalid_points = np.array([
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0]
+        ])
+        self.assertIsNone(eye_aspect_ratio(invalid_points))
+
+        # Test points with zero distance
+        zero_distance = np.array([
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [1, 0],
+            [1, 0],
+            [1, 0]
+        ])
+        self.assertIsNone(eye_aspect_ratio(zero_distance))
+
+    def test_mouth_aspect_ratio_normal(self):
+        """Test MAR calculation with normal values"""
+        # Simulate mouth points for slightly open mouth (MAR ≈ 0.4)
+        mouth_points = np.array([
+            [0, 0],    # P1
+            [0, 4],    # P2
+            [0, 8],    # P3
+            [20, 0],   # P4
+            [20, 4],   # P5
+            [20, 8]    # P6
+        ])
+        mar = mouth_aspect_ratio(mouth_points)
+        self.assertIsNotNone(mar)
+        self.assertTrue(0.2 <= mar <= 0.65)
+
+    def test_mouth_aspect_ratio_wide(self):
+        """Test MAR calculation with wide open mouth"""
+        # Simulate mouth points for wide open mouth (MAR ≈ 0.6)
+        mouth_points = np.array([
+            [0, 0],    # P1
+            [0, 6],    # P2
+            [0, 12],   # P3
+            [20, 0],   # P4
+            [20, 6],   # P5
+            [20, 12]   # P6
+        ])
+        mar = mouth_aspect_ratio(mouth_points)
+        self.assertIsNotNone(mar)
+        self.assertGreaterEqual(mar, 0.5)
+        self.assertLessEqual(mar, 0.65)
+
+    def test_mouth_aspect_ratio_invalid(self):
+        """Test MAR calculation with invalid inputs"""
+        # Test None input
+        self.assertIsNone(mouth_aspect_ratio(None))
+
+        # Test invalid points
+        invalid_points = np.array([
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0]
+        ])
+        self.assertIsNone(mouth_aspect_ratio(invalid_points))
+
+    def test_normalization(self):
+        """Test value normalization"""
+        # Test normal values
+        self.assertAlmostEqual(normalize_value(0.25, 0.15, 0.35), 0.5)
+        self.assertEqual(normalize_value(0.15, 0.15, 0.35), 0.0)
+        self.assertEqual(normalize_value(0.35, 0.15, 0.35), 1.0)
+
+        # Test out of bounds values
+        self.assertEqual(normalize_value(0.1, 0.15, 0.35), 0.0)
+        self.assertEqual(normalize_value(0.4, 0.15, 0.35), 1.0)
+
+        # Test None value
+        self.assertIsNone(normalize_value(None, 0.15, 0.35))
+
+    def test_facial_state(self):
+        """Test facial state calculation"""
+        # Test normal values
+        state = get_facial_state(0.25, 0.25, 0.4, use_smoothing=False)
+        self.assertIsNotNone(state["avg_ear"])
+        self.assertIsNotNone(state["mar"])
+        self.assertTrue(0 <= state["ear_confidence"] <= 1)
+        self.assertTrue(0 <= state["mar_confidence"] <= 1)
+
+        # Test None values
+        state = get_facial_state(None, None, 0.4, use_smoothing=False)
+        self.assertIsNone(state["avg_ear"])
+        self.assertIsNotNone(state["mar"])
+        self.assertEqual(state["ear_confidence"], 0.0)
+
+        # Test invalid values
+        state = get_facial_state(0.5, 0.5, 1.0, use_smoothing=False)
+        self.assertIsNotNone(state["avg_ear"])
+        self.assertIsNotNone(state["mar"])
+
+if __name__ == '__main__':
+    unittest.main() 

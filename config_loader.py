@@ -167,6 +167,18 @@ def load_config(config_path=None):
                 "pitch_threshold": 20,
                 "roll_threshold": 15
             },
+            "performance": {
+                "skip_frames": 0,
+                "max_queue_size": 2,
+                "resize_factor": 1.0,
+                "use_threading": True,
+                "max_workers": 2,
+                "enable_gpu": False,
+                "camera_buffer_size": 1,
+                "batch_size": 1,
+                "profile_performance": False,
+                "track_memory": False
+            },
             "logging": {
                 "level": "INFO",
                 "log_dir": "driver_monitoring_logs",
@@ -190,6 +202,13 @@ def load_config(config_path=None):
                 if yaml_config:
                     update_config(default_config, yaml_config)
                     logger.info(f"Configuration loaded from {config_path}")
+        elif os.path.exists('config.yaml'):
+            # Try to load from config.yaml in current directory
+            with open('config.yaml', 'r') as f:
+                yaml_config = yaml.safe_load(f)
+                if yaml_config:
+                    update_config(default_config, yaml_config)
+                    logger.info("Configuration loaded from config.yaml")
         else:
             logger.warning("Using default configuration")
 
@@ -299,4 +318,41 @@ def save_config(config: Dict[str, Any], config_path: str = DEFAULT_CONFIG_PATH) 
         return True
     except Exception as e:
         logger.error(f"Error saving config: {e}")
-        return False 
+        return False
+
+
+class ConfigLoader:
+    """
+    Configuration loader class for the EyeDTrack system.
+    Provides easy access to configuration settings.
+    """
+    
+    def __init__(self, config_path: Optional[str] = None):
+        """
+        Initialize the configuration loader.
+        
+        Args:
+            config_path: Path to the configuration file
+        """
+        self.config_path = config_path or DEFAULT_CONFIG_PATH
+        self.config = self.load_config()
+    
+    def load_config(self) -> Dict[str, Any]:
+        """Load configuration from file"""
+        return load_config(self.config_path)
+    
+    def get_config(self) -> Dict[str, Any]:
+        """Get the loaded configuration"""
+        return self.config
+    
+    def get_value(self, key_path: str, default: Any = None) -> Any:
+        """Get a configuration value by key path"""
+        return get_config_value(self.config, key_path, default)
+    
+    def reload(self) -> None:
+        """Reload configuration from file"""
+        self.config = self.load_config()
+    
+    def save(self) -> bool:
+        """Save current configuration to file"""
+        return save_config(self.config, self.config_path) 

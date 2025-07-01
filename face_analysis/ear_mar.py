@@ -1,3 +1,7 @@
+"""
+Eye and mouth aspect ratio calculations for driver monitoring.
+"""
+
 import numpy as np
 import logging
 from collections import deque
@@ -6,16 +10,16 @@ from collections import deque
 logger = logging.getLogger(__name__)
 
 # Global variables for EAR/MAR normalization
-_ear_lower = 0.18
-_ear_upper = 0.45
+_ear_lower = 0.15  # Lowered from 0.18 to better detect closed eyes
+_ear_upper = 0.35  # Lowered from 0.45 as values above 0.35 are anatomically unlikely
 _mar_lower = 0.20
-_mar_upper = 0.80
+_mar_upper = 0.70  # Increased from 0.65 to allow for wider yawns
 
 # Smoothing buffers
 _ear_buffer = deque(maxlen=10)
 _mar_buffer = deque(maxlen=10)
 
-def configure_thresholds(ear_lower=0.18, ear_upper=0.45, mar_lower=0.20, mar_upper=0.80):
+def configure_thresholds(ear_lower=0.15, ear_upper=0.35, mar_lower=0.20, mar_upper=0.70):
     """Configure the thresholds for EAR and MAR normalization"""
     global _ear_lower, _ear_upper, _mar_lower, _mar_upper
     _ear_lower = ear_lower
@@ -75,168 +79,125 @@ def eye_aspect_ratio(eye_points):
                    or a dlib.full_object_detection object.
     
     Returns:
-        float: The eye aspect ratio, or 0.25 (neutral value) if calculation fails.
+        float: The eye aspect ratio, or None if calculation fails
     """
     try:
         # Validate input
         if eye_points is None:
-            logger.warning("Eye points are None")
-            return 0.25
+            return None
 
         # Extract points with validation
         points = []
-        try:
-            if hasattr(eye_points, 'part'):
-                points = [(eye_points.part(i).x, eye_points.part(i).y) for i in range(6)]
-            elif isinstance(eye_points, (list, tuple, np.ndarray)):
-                if isinstance(eye_points, np.ndarray):
-                    if len(eye_points.shape) == 2 and eye_points.shape[1] >= 2:
-                        points = [(eye_points[i, 0], eye_points[i, 1]) for i in range(6)]
-                    else:
-                        logger.warning(f"Invalid eye_points numpy array shape: {eye_points.shape}")
-                        return 0.25
-                else:
-                    points = eye_points[:6]
-            else:
-                logger.warning(f"Unsupported eye_points type: {type(eye_points)}")
-                return 0.25
-        except Exception as e:
-            logger.error(f"Error extracting eye points: {e}")
-            return 0.25
+        for i in range(6):
+            pt = get_point_coordinates(eye_points, i)
+            if pt is None:
+                return None
+            points.append(pt)
 
-        # Validate points
-        if len(points) != 6:
-            logger.warning(f"Invalid number of eye points: {len(points)}")
-            return 0.25
+        # Convert points to numpy arrays
+        points = np.array(points, dtype=np.float64)
+        if not np.all(np.isfinite(points)):
+            return None
 
-        # Convert points to numpy arrays with validation
-        try:
-            points = np.array(points, dtype=np.float64)
-            if not np.all(np.isfinite(points)):
-                logger.warning("Non-finite values in eye points")
-                return 0.25
-        except Exception as e:
-            logger.error(f"Error converting points to numpy array: {e}")
-            return 0.25
+        # Calculate distances
+        # Vertical distances
+        A = np.linalg.norm(points[1] - points[5])
+        B = np.linalg.norm(points[2] - points[4])
+        # Horizontal distance
+        C = np.linalg.norm(points[0] - points[3])
 
-        # Calculate distances with validation
-        try:
-            # Vertical distances
-            A = np.linalg.norm(points[1] - points[5])
-            B = np.linalg.norm(points[2] - points[4])
-            # Horizontal distance
-            C = np.linalg.norm(points[0] - points[3])
+        # Validate distances
+        if not all(np.isfinite([A, B, C])) or C <= 0:
+            return None
 
-            # Validate distances
-            if not all(np.isfinite([A, B, C])) or any(x <= 0 for x in [A, B, C]):
-                logger.warning("Invalid distances calculated for EAR")
-                return 0.25
+        # Compute EAR
+        ear = (A + B) / (2.0 * C)
+        
+        # Validate EAR is within anatomically possible range
+        if not (0.05 <= ear <= 0.45):  # More lenient anatomical range
+            return None
 
-            # Compute EAR with validation
-            ear = (A + B) / (2.0 * C)
-            if not np.isfinite(ear) or ear <= 0:
-                logger.warning(f"Invalid EAR value calculated: {ear}")
-                return 0.25
-
-            return float(ear)
-        except Exception as e:
-            logger.error(f"Error calculating EAR: {e}")
-            return 0.25
+        return float(ear)
 
     except Exception as e:
         logger.error(f"Error in eye_aspect_ratio: {e}")
-        return 0.25
+        return None
 
 def mouth_aspect_ratio(mouth_points):
     """
     Calculate the mouth aspect ratio.
     
     Args:
-        mouth_points: List of 12 points representing the mouth landmarks,
+        mouth_points: List of 6 points representing the mouth landmarks,
                      or a dlib.full_object_detection object.
     
     Returns:
-        float: The mouth aspect ratio, or 0.5 (neutral value) if calculation fails.
+        float: The mouth aspect ratio, or None if calculation fails
     """
     try:
         # Validate input
         if mouth_points is None:
-            logger.warning("Mouth points are None")
-            return 0.5
+            return None
 
         # Extract points with validation
         points = []
-        try:
-            if hasattr(mouth_points, 'part'):
-                # Get specific points for MAR calculation (48, 50, 52, 54, 56, 58)
-                indices = [48, 50, 52, 54, 56, 58]
-                points = [(mouth_points.part(i).x, mouth_points.part(i).y) for i in indices]
-            elif isinstance(mouth_points, (list, tuple, np.ndarray)):
-                if isinstance(mouth_points, np.ndarray):
-                    if len(mouth_points.shape) == 2 and mouth_points.shape[1] >= 2:
-                        # Get specific points for MAR calculation
-                        indices = [0, 2, 4, 6, 8, 10]
-                        points = [(mouth_points[i, 0], mouth_points[i, 1]) for i in indices]
-                    else:
-                        logger.warning(f"Invalid mouth_points numpy array shape: {mouth_points.shape}")
-                        return 0.5
-                else:
-                    # Get specific points for MAR calculation
-                    indices = [0, 2, 4, 6, 8, 10]
-                    points = [mouth_points[i] for i in indices]
+        
+        # Check if this is a dlib object or numpy array
+        if hasattr(mouth_points, 'part'):
+            # dlib landmarks - use original indices for mouth region
+            indices = [48, 50, 52, 54, 56, 58]
+        else:
+            # For numpy array of mouth points, use indices based on array size
+            if isinstance(mouth_points, np.ndarray) and len(mouth_points) >= 6:
+                # Use first 6 points in a pattern that makes sense for MAR calculation
+                indices = [0, 1, 2, 3, 4, 5]  # Use all 6 points we have
             else:
-                logger.warning(f"Unsupported mouth_points type: {type(mouth_points)}")
-                return 0.5
-        except Exception as e:
-            logger.error(f"Error extracting mouth points: {e}")
-            return 0.5
+                logger.debug(f"Invalid mouth_points format: {type(mouth_points)}, length: {len(mouth_points) if hasattr(mouth_points, '__len__') else 'unknown'}")
+                return None
+        
+        for idx in indices:
+            pt = get_point_coordinates(mouth_points, idx)
+            if pt is None:
+                return None
+            points.append(pt)
 
-        # Validate points
-        if len(points) != 6:
-            logger.warning(f"Invalid number of mouth points: {len(points)}")
-            return 0.5
+        # Convert points to numpy arrays
+        points = np.array(points, dtype=np.float64)
+        if not np.all(np.isfinite(points)):
+            return None
 
-        # Convert points to numpy arrays with validation
-        try:
-            points = np.array(points, dtype=np.float64)
-            if not np.all(np.isfinite(points)):
-                logger.warning("Non-finite values in mouth points")
-                return 0.5
-        except Exception as e:
-            logger.error(f"Error converting points to numpy array: {e}")
-            return 0.5
+        # Calculate distances for MAR
+        # For 6 points, we'll use a different approach:
+        # Points 0,3 = horizontal distance (left-right corners)
+        # Points 1,4 = first vertical distance 
+        # Points 2,5 = second vertical distance
+        A = np.linalg.norm(points[1] - points[4])  # First vertical distance
+        B = np.linalg.norm(points[2] - points[5])  # Second vertical distance
+        C = np.linalg.norm(points[0] - points[3])  # Horizontal distance
 
-        # Calculate distances with validation
-        try:
-            # Vertical distances
-            A = np.linalg.norm(points[1] - points[4])
-            B = np.linalg.norm(points[2] - points[5])
-            # Horizontal distance
-            C = np.linalg.norm(points[0] - points[3])
+        # Validate distances
+        if not all(np.isfinite([A, B, C])) or C <= 0:
+            return None
 
-            # Validate distances
-            if not all(np.isfinite([A, B, C])) or any(x <= 0 for x in [A, B, C]):
-                logger.warning("Invalid distances calculated for MAR")
-                return 0.5
+        # Compute MAR
+        mar = (A + B) / (2.0 * C)
+        
+        # Validate MAR is within anatomically possible range
+        if not (0.05 <= mar <= 1.5):  # More lenient range for mouth
+            return None
 
-            # Compute MAR with validation
-            mar = (A + B) / (2.0 * C)
-            if not np.isfinite(mar) or mar <= 0:
-                logger.warning(f"Invalid MAR value calculated: {mar}")
-                return 0.5
-
-            return float(mar)
-        except Exception as e:
-            logger.error(f"Error calculating MAR: {e}")
-            return 0.5
+        return float(mar)
 
     except Exception as e:
         logger.error(f"Error in mouth_aspect_ratio: {e}")
-        return 0.5
+        return None
 
 def normalize_value(value, lower, upper):
     """Normalize a value between 0 and 1 based on lower and upper bounds"""
     try:
+        if value is None:
+            return None
+            
         # Clip the value to the bounds
         clipped = max(lower, min(upper, value))
         
@@ -246,7 +207,7 @@ def normalize_value(value, lower, upper):
         return normalized
     except Exception as e:
         logger.error(f"Error normalizing value: {e}")
-        return 0.5  # Return middle value on error
+        return None
 
 def get_eye_state(ear):
     """Determine eye state based on eye aspect ratio with confidence score"""
@@ -306,64 +267,37 @@ def get_mouth_state(mar):
 def get_facial_state(right_ear, left_ear, mar, use_smoothing=True):
     """Get the facial state including normalized EAR and MAR values with optional smoothing and confidence scores"""
     try:
-        # Validate inputs
-        if not all(isinstance(x, (int, float)) and np.isfinite(x) for x in [right_ear, left_ear, mar]):
-            logger.warning("Invalid input values for facial state")
+        # Handle None values
+        if right_ear is None or left_ear is None:
             return {
-                "right_ear": 0.25,
-                "left_ear": 0.25,
-                "avg_ear": 0.25,
-                "mar": 0.5,
-                "normalized_ear": 0.5,
-                "normalized_mar": 0.5,
-                "ear_confidence": 0.5,
-                "mar_confidence": 0.5
+                "right_ear": None,
+                "left_ear": None,
+                "avg_ear": None,
+                "mar": mar,
+                "normalized_ear": None,
+                "normalized_mar": normalize_value(mar, _mar_lower, _mar_upper) if mar is not None else None,
+                "ear_confidence": 0.0,
+                "mar_confidence": 0.5 if mar is not None else 0.0
             }
 
         # Calculate average EAR
         avg_ear = (right_ear + left_ear) / 2.0
         
         # Apply temporal smoothing if enabled
-        if use_smoothing:
-            try:
-                # Add current values to buffers
-                _ear_buffer.append(avg_ear)
-                _mar_buffer.append(mar)
-                
-                # Calculate smoothed values
-                smoothed_ear = weighted_temporal_smoothing(avg_ear, _ear_buffer)
-                smoothed_mar = weighted_temporal_smoothing(mar, _mar_buffer)
-                
-                # Validate smoothed values
-                if not all(np.isfinite([smoothed_ear, smoothed_mar])):
-                    logger.warning("Invalid smoothed values calculated")
-                    return {
-                        "right_ear": right_ear,
-                        "left_ear": left_ear,
-                        "avg_ear": avg_ear,
-                        "mar": mar,
-                        "normalized_ear": 0.5,
-                        "normalized_mar": 0.5,
-                        "ear_confidence": 0.5,
-                        "mar_confidence": 0.5
-                    }
-                
-                # Use smoothed values
-                avg_ear = smoothed_ear
-                mar = smoothed_mar
-            except Exception as e:
-                logger.error(f"Error in temporal smoothing: {e}")
-        
-        # Normalize EAR and MAR
-        normalized_ear = normalize_value(avg_ear, _ear_lower, _ear_upper)
-        normalized_mar = normalize_value(mar, _mar_lower, _mar_upper)
-        
-        # Invert EAR so that 0 = eyes open, 1 = eyes closed
-        normalized_ear = 1.0 - normalized_ear
+        if use_smoothing and avg_ear is not None and mar is not None:
+            _ear_buffer.append(avg_ear)
+            _mar_buffer.append(mar)
+            
+            avg_ear = weighted_temporal_smoothing(avg_ear, _ear_buffer)
+            mar = weighted_temporal_smoothing(mar, _mar_buffer)
+
+        # Normalize values
+        normalized_ear = normalize_value(avg_ear, _ear_lower, _ear_upper) if avg_ear is not None else None
+        normalized_mar = normalize_value(mar, _mar_lower, _mar_upper) if mar is not None else None
         
         # Calculate confidence scores
-        ear_confidence = 1.0 - abs(normalized_ear - 0.5) * 2  # Higher confidence when closer to 0 or 1
-        mar_confidence = 1.0 - abs(normalized_mar - 0.5) * 2  # Higher confidence when closer to 0 or 1
+        ear_confidence = 1.0 - abs(normalized_ear - 0.5) * 2 if normalized_ear is not None else 0.0
+        mar_confidence = 1.0 - abs(normalized_mar - 0.5) * 2 if normalized_mar is not None else 0.0
         
         return {
             "right_ear": right_ear,
@@ -375,15 +309,16 @@ def get_facial_state(right_ear, left_ear, mar, use_smoothing=True):
             "ear_confidence": ear_confidence,
             "mar_confidence": mar_confidence
         }
+
     except Exception as e:
-        logger.error(f"Error getting facial state: {e}")
+        logger.error(f"Error in get_facial_state: {e}")
         return {
             "right_ear": right_ear,
             "left_ear": left_ear,
-            "avg_ear": 0.25,
-            "mar": 0.5,
-            "normalized_ear": 0.5,
-            "normalized_mar": 0.5,
-            "ear_confidence": 0.5,
-            "mar_confidence": 0.5
+            "avg_ear": None,
+            "mar": None,
+            "normalized_ear": None,
+            "normalized_mar": None,
+            "ear_confidence": 0.0,
+            "mar_confidence": 0.0
         }

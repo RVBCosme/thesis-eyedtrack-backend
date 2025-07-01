@@ -23,17 +23,21 @@ def get_event_type(event_data: Dict[str, Any]) -> str:
     """Determine the event type based on behavior categories"""
     if not event_data.get("face_box"):
         return "no_face"
-    elif event_data.get("is_drowsy", False) or event_data.get("is_risky", False):
+    
+    # Get behavior category from nested structure
+    behavior_category = event_data.get("behavior_category", {})
+    
+    if behavior_category.get("is_drowsy", False):
         return "drowsy"
-    elif event_data.get("is_yawning", False):
+    elif behavior_category.get("is_yawning", False):
         return "yawning"
-    elif event_data.get("is_distracted", False):
+    elif behavior_category.get("is_distracted", False):
         return "distracted"
     else:
         return "normal"
 
 def log_event(log_dir: Path, event_type: str, event_data: Dict[str, Any]) -> None:
-    """Log only risky behavior events to a single JSON file"""
+    """Log all events to a single JSON file"""
     try:
         # Create the directory if it doesn't exist
         if not isinstance(log_dir, Path):
@@ -44,29 +48,29 @@ def log_event(log_dir: Path, event_type: str, event_data: Dict[str, Any]) -> Non
         events_file = log_dir / 'driver_monitoring.json'
         
         # Extract required data from event_data
-        timestamp = datetime.now()
+        timestamp = event_data.get("timestamp", datetime.now().isoformat())
         
-        # Get behavior category
-        behavior_category = {
-            "is_drowsy": bool(event_data.get("is_drowsy", False) or event_data.get("is_risky", False)),
-            "is_yawning": bool(event_data.get("is_yawning", False)),
-            "is_distracted": bool(event_data.get("is_distracted", False))
-        }
+        # Get behavior category from nested structure
+        behavior_category = event_data.get("behavior_category", {
+            "is_drowsy": False,
+            "is_yawning": False,
+            "is_distracted": False
+        })
         
-        # Get MAR and EAR values - rounded to 4 decimal places
-        mar = round_to_4dp(event_data.get("mar", 0.0))
-        ear = round_to_4dp(event_data.get("ear", 0.0))
+        # Get metrics from nested structure
+        metrics = event_data.get("metrics", {})
+        mar = round_to_4dp(metrics.get("mar", 0.0))
+        ear = round_to_4dp(metrics.get("ear", 0.0))
         
-        # Get head pose angles - rounded to 4 decimal places
-        head_pose = event_data.get("head_pose", [0, 0, 0])
-        if isinstance(head_pose, (list, tuple, np.ndarray)) and len(head_pose) >= 3:
-            pitch, yaw, roll = head_pose[:3]
+        # Get head pose angles from metrics - rounded to 4 decimal places
+        head_pose = metrics.get("head_pose", [0, 0, 0])
+        if isinstance(head_pose, (list, tuple, np.ndarray)) and len(head_pose) >= 2:
+            yaw, pitch = head_pose[0], head_pose[1]  # Note: yaw is first in head_pose array
         else:
-            pitch, yaw, roll = 0.0, 0.0, 0.0
+            pitch, yaw = 0.0, 0.0
             
         pitch = round_to_4dp(float(pitch))
         yaw = round_to_4dp(float(yaw))
-        roll = round_to_4dp(float(roll))
         
         # Get behavior confidence - rounded to 4 decimal places
         behavior_confidence = round_to_4dp(event_data.get("behavior_confidence", 0.0))
@@ -74,36 +78,33 @@ def log_event(log_dir: Path, event_type: str, event_data: Dict[str, Any]) -> Non
         # Determine behavior output
         if not event_data.get("face_box"):
             behavior_output = "NO FACE DETECTED"
-            # Don't log when no face is detected
-            return
         elif any(behavior_category.values()):
             behavior_output = "RISKY BEHAVIOR DETECTED"
-            # Only create and log the event if risky behavior is detected
-            event = {
-                "timestamp": timestamp.isoformat(),
-                "behavior_category": behavior_category,
-                "behavior_output": behavior_output,
-                "mar": mar,
-                "ear": ear,
-                "pitch": pitch,
-                "yaw": yaw, 
-                "roll": roll,
-                "behavior_confidence": behavior_confidence
-            }
-            
-            try:
-                # Append event as a single line to the log file
-                with open(events_file, 'a', encoding='utf-8') as f:
-                    json_str = json.dumps(event)
-                    f.write(json_str + "\n")
-                    f.flush()
-                    os.fsync(f.fileno())
-                    
-            except Exception as e:
-                logger.error(f"Failed to log event: {str(e)}", exc_info=True)
         else:
-            # Don't log normal behavior
-            return
+            behavior_output = "NO RISKY BEHAVIOR DETECTED"
+            
+        # Create and log the event
+        event = {
+            "timestamp": timestamp,
+            "behavior_category": behavior_category,
+            "behavior_output": behavior_output,
+            "mar": mar,
+            "ear": ear,
+            "pitch": pitch,
+            "yaw": yaw,
+            "behavior_confidence": behavior_confidence
+        }
+        
+        try:
+            # Append event as a single line to the log file
+            with open(events_file, 'a', encoding='utf-8') as f:
+                json_str = json.dumps(event)
+                f.write(json_str + "\n")
+                f.flush()
+                os.fsync(f.fileno())
+                
+        except Exception as e:
+            logger.error(f"Failed to log event: {str(e)}", exc_info=True)
             
     except Exception as e:
         logger.error(f"Failed to process event data: {str(e)}", exc_info=True) 

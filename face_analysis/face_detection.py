@@ -166,34 +166,49 @@ class FaceDetector:
     def get_landmarks(self, frame, face_box):
         """Get facial landmarks using available landmark detectors"""
         if frame is None or face_box is None:
+            logger.warning("Invalid frame or face box provided")
             return None
             
         try:
             # Try MediaPipe landmarks if enabled
             if self.use_mediapipe:
-                frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                results = self.face_mesh.process(frame_rgb)
-                if results.multi_face_landmarks:
-                    face_landmarks = results.multi_face_landmarks[0]
-                    h, w = frame.shape[:2]
-                    landmarks = []
-                    for landmark in face_landmarks.landmark:
-                        x, y = int(landmark.x * w), int(landmark.y * h)
-                        landmarks.append((x, y))
-                    return np.array(landmarks)
+                try:
+                    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                    results = self.face_mesh.process(frame_rgb)
+                    if results.multi_face_landmarks:
+                        face_landmarks = results.multi_face_landmarks[0]
+                        h, w = frame.shape[:2]
+                        landmarks = []
+                        for landmark in face_landmarks.landmark:
+                            x, y = int(landmark.x * w), int(landmark.y * h)
+                            landmarks.append((x, y))
+                        if len(landmarks) > 0:
+                            logger.debug("Successfully detected landmarks using MediaPipe")
+                            return np.array(landmarks)
+                        else:
+                            logger.warning("MediaPipe detected no landmarks, falling back to dlib")
+                except Exception as e:
+                    logger.error(f"MediaPipe landmark detection failed: {e}")
                     
             # Try dlib shape predictor if available
             if self.shape_predictor:
-                x, y, w, h = face_box
-                rect = dlib.rectangle(x, y, x + w, y + h)
-                shape = self.shape_predictor(frame, rect)
-                landmarks = []
-                for i in range(68):
-                    x = shape.part(i).x
-                    y = shape.part(i).y
-                    landmarks.append((x, y))
-                return np.array(landmarks)
-                
+                try:
+                    x, y, w, h = face_box
+                    rect = dlib.rectangle(x, y, x + w, y + h)
+                    shape = self.shape_predictor(frame, rect)
+                    landmarks = []
+                    for i in range(68):
+                        x = shape.part(i).x
+                        y = shape.part(i).y
+                        landmarks.append((x, y))
+                    if len(landmarks) > 0:
+                        logger.debug("Successfully detected landmarks using dlib")
+                        return np.array(landmarks)
+                    else:
+                        logger.warning("dlib detected no landmarks")
+                except Exception as e:
+                    logger.error(f"dlib landmark detection failed: {e}")
+                    
         except Exception as e:
             logger.error(f"Landmark detection failed: {e}")
             

@@ -1,5 +1,6 @@
 """
 Frame processor module for driver monitoring system.
+Uses only the ImprovedFaceAnalyzer for comprehensive behavior detection.
 """
 
 import cv2
@@ -9,426 +10,272 @@ import logging
 import threading
 import queue
 import os
+import traceback
 from typing import Dict, Any, Optional, Tuple, List, Deque
 from collections import deque
-import traceback
+import concurrent.futures
+from pathlib import Path
+from datetime import datetime
 
-from face_analysis import FaceDetector, HeadPoseEstimator
-from face_analysis import eye_aspect_ratio, mouth_aspect_ratio, get_eye_state, get_mouth_state
-from face_analysis import weighted_temporal_smoothing
-from behavior_categories import BEHAVIOR_CATEGORIES
+# Import the standalone improved detection module
+from face_analysis.improved_detection import ImprovedFaceAnalyzer
 from video_recorder import VideoRecorder
+from behavior_categories import BEHAVIOR_CATEGORIES
+from event_logger import log_event, get_event_type
 
 logger = logging.getLogger(__name__)
 
-# Define landmark indices for eye and mouth measurements
-# These indices are based on dlib's 68-point facial landmark detector
-LEFT_EYE_INDICES = [36, 37, 38, 39, 40, 41]
-RIGHT_EYE_INDICES = [42, 43, 44, 45, 46, 47]
-MOUTH_INDICES = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+def normalize_angle(angle):
+    """Normalize angle to [-180, 180] range"""
+    while angle > 180:
+        angle -= 360
+    while angle < -180:
+        angle += 360
+    return angle
 
 class OptimizedFrameProcessor:
     def __init__(self, config):
         """Initialize the frame processor with configuration"""
         self.config = config
         
-        # Initialize face detector with proper configuration
-        self.face_detector = FaceDetector(config)
-        
-        # Initialize head pose estimator
-        self.head_pose_estimator = HeadPoseEstimator(config)
+        # Initialize the standalone ImprovedFaceAnalyzer (only detection method)
+        try:
+            self.standalone_analyzer = ImprovedFaceAnalyzer(config)
+            logger.info("✅ ImprovedFaceAnalyzer initialized successfully")
+        except Exception as e:
+            logger.error(f"❌ Failed to initialize ImprovedFaceAnalyzer: {e}")
+            raise
         
         # Initialize state tracking with configurable thresholds
         self._drowsy_frames = 0
         self._yawn_frames = 0
         self._distraction_frames = 0
-        self._last_behavior = "NO BEHAVIOR DETECTED"
-        self._behavior_confidence = 0.0
+        self._last_behavior = BEHAVIOR_CATEGORIES["NO_BEHAVIOR"]
         
-        # Get thresholds from config
-        self.ear_threshold = config["thresholds"]["ear_lower"]
-        self.mar_threshold = config["thresholds"]["mar_upper"]
-        self.drowsy_frames_threshold = config["thresholds"]["drowsy_frames"]
-        self.yawn_frames_threshold = config["thresholds"]["yawn_frames"]
-        self.distraction_frames_threshold = config["thresholds"]["distraction_frames"]
+        # Get thresholds from config - use new detection section if available, fallback to old thresholds
+        detection_config = config.get("detection", config.get("thresholds", {}))
+        
+        self.ear_threshold = detection_config.get("ear_threshold", config["thresholds"]["ear_lower"])
+        self.mar_threshold = detection_config.get("mar_threshold", config["thresholds"]["mar_upper"])
+        self.drowsy_frames_threshold = detection_config.get("drowsy_frames_threshold", config["thresholds"]["drowsy_frames"])
+        self.yawn_frames_threshold = detection_config.get("yawn_frames_threshold", config["thresholds"]["yawn_frames"])
+        self.distraction_frames_threshold = detection_config.get("distraction_frames_threshold", config["thresholds"]["distraction_frames"])
         
         # Head pose thresholds
-        self.yaw_threshold = config["thresholds"]["yaw_threshold"]
-        self.pitch_threshold = config["thresholds"]["pitch_threshold"]
-        self.roll_threshold = config["thresholds"]["roll_threshold"]
+        self.yaw_threshold = detection_config.get("yaw_threshold", config["thresholds"]["yaw_threshold"])
+        self.pitch_threshold = detection_config.get("pitch_threshold", config["thresholds"]["pitch_threshold"])
         
-        # Head pose smoothing
-        self.last_head_pose = None
-        self.max_angle_change = config["head_pose"].get("max_angle_change", 15.0)
-        self.use_angle_smoothing = config["head_pose"].get("angle_smoothing", True)
-        self.head_pose_history = deque(maxlen=5)
+        # Performance optimizations
+        self.use_threading = config["performance"]["use_threading"]
+        self.max_workers = config["performance"]["max_workers"]
+        self.resize_factor = config["performance"]["resize_factor"]
+        self.use_roi = config["performance"]["use_roi"]
+        self.roi_margin = config["performance"]["roi_margin"]
         
-        # Performance tracking
-        self.frame_count = 0
-        self.last_fps_update = time.time()
-        self.fps = 0.0
-        self.frame_skip_counter = 0
-        self.frame_skip_threshold = config["performance"]["skip_frames"]
-        self.min_frame_interval = 1.0 / config["camera"]["fps"]
-        self.last_processed_time = time.time()
+        if self.use_threading:
+            self.thread_pool = concurrent.futures.ThreadPoolExecutor(max_workers=self.max_workers)
         
-        # Face tracking with improved robustness
-        self.face_tracking_failed = 0
-        self.max_tracking_failures = 10
-        self.last_face_box = None
+        # ROI tracking
+        self.last_face_roi = None
+        self.tracking_failures = 0
+        self.max_tracking_failures = config["face_detection"]["max_tracking_failures"]
         
-        # Temporal smoothing for stability
-        self.use_temporal_smoothing = config["behavior"]["temporal_smoothing"]
-        self.smoothing_window = config["behavior"]["smoothing_window"]
-        self.behavior_confidence_history = deque(maxlen=self.smoothing_window)
-        
-        # Initialize video recorder for risky behavior monitoring
+        # Initialize video recorder
         video_output_dir = os.path.join(config["logging"]["log_dir"], "videos")
         self.video_recorder = VideoRecorder(video_output_dir)
-        logger.info(f"Video recorder initialized with output directory: {video_output_dir}")
-            
-        logger.info("Frame processor initialized with configuration")
         
+        # Temporal smoothing
+        self.ear_history = deque(maxlen=5)
+        self.mar_history = deque(maxlen=5)
+        self.head_pose_history = deque(maxlen=5)
+        self.smoothing_alpha = config["head_pose"]["smoothing_alpha"]
+        
+        # Event logging
+        self.log_dir = Path(config["logging"]["log_dir"])
+        
+        logger.info(f"Using detection thresholds: EAR={self.ear_threshold}, MAR={self.mar_threshold}, "
+                   f"Yaw={self.yaw_threshold}, Pitch={self.pitch_threshold}, "
+                   f"Frames: drowsy={self.drowsy_frames_threshold}, yawn={self.yawn_frames_threshold}, distraction={self.distraction_frames_threshold}")
+        
+        logger.info("Optimized frame processor initialized")
+    
     def process_frame(self, frame: np.ndarray) -> Dict[str, Any]:
-        """Process a single frame with comprehensive analysis"""
+        """Process a single frame using ImprovedFaceAnalyzer"""
         try:
-            # Validate input frame
             if frame is None or not isinstance(frame, np.ndarray) or frame.size == 0:
-                logger.error("Invalid input frame")
                 return {
+                    "success": False,
                     "error": "Invalid input frame",
-                    "capture_fps": self.calculate_fps()
+                    "face_box": None,
+                    "behavior_category": {
+                        "is_drowsy": False,
+                        "is_yawning": False,
+                        "is_distracted": False
+                    },
+                    "behavior_confidence": 0.0,
+                    "metrics": {
+                        "ear": 0.0,
+                        "mar": 0.0,
+                        "head_pose": None
+                    },
+                    "timestamp": datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f")
                 }
 
-            # Initialize result dictionary
-            result = {
-                "timestamp": time.time(),
-                "face_box": None,
-                "landmarks": None,
-                "head_pose": None,
-                "ear": 0.0,
-                "mar": 0.0,
-                "is_drowsy": False,
-                "is_yawning": False,
-                "is_distracted": False,
-                "behavior_confidence": 0.0,
-                "behavior": self._last_behavior,
-                "fps": self.calculate_fps()
-            }
+            # Preprocess frame
+            processed_frame = self.preprocess_frame(frame)
             
-            # Apply CLAHE if enabled
-            if self.config["clahe"]["enabled"]:
-                frame = self.apply_clahe(frame)
+            # Use ImprovedFaceAnalyzer for complete analysis
+            logger.debug("🎯 Using ImprovedFaceAnalyzer for frame analysis")
+            analysis_result = self.standalone_analyzer.analyze_frame(processed_frame)
             
-            # Detect face with fallback modes
-            face_box = self.face_detector.detect(frame)
-            result["face_box"] = face_box
-            
-            if face_box is not None:
-                # Reset tracking failures
-                self.face_tracking_failed = 0
-                self.last_face_box = face_box
+            if analysis_result["success"]:
+                # Extract metrics
+                ear = analysis_result["metrics"]["ear"]
+                mar = analysis_result["metrics"]["mar"]
+                yaw = analysis_result["metrics"]["yaw"]
+                pitch = analysis_result["metrics"]["pitch"]
+                head_pose = [pitch, yaw, 0.0]
                 
-                # Get face landmarks
-                landmarks = self.face_detector.get_landmarks(frame, face_box)
-                result["landmarks"] = landmarks
+                # Extract behaviors (ImprovedFaceAnalyzer already handles thresholds)
+                is_drowsy = analysis_result["behaviors"]["is_drowsy"]
+                is_yawning = analysis_result["behaviors"]["is_yawning"]
+                is_distracted = analysis_result["behaviors"]["is_distracted"]
                 
-                if landmarks is not None:
-                    # Calculate eye aspect ratio (EAR)
-                    left_eye, right_eye = self.extract_eye_landmarks(landmarks)
-                    if left_eye is not None and right_eye is not None:
-                        ear_left = eye_aspect_ratio(left_eye)
-                        ear_right = eye_aspect_ratio(right_eye)
-                        ear = (ear_left + ear_right) / 2.0
-                        result["ear"] = ear
-                        
-                        # Check for drowsiness - more sensitive detection
-                        if ear < self.ear_threshold:
-                            self._drowsy_frames += 2  # Increment by 2 to detect drowsiness faster
-                            if self._drowsy_frames >= self.drowsy_frames_threshold:
-                                result["is_drowsy"] = True
-                                self._drowsy_frames = self.drowsy_frames_threshold  # Cap at threshold
-                        else:
-                            self._drowsy_frames = max(0, self._drowsy_frames - 1)  # Gradual decrease
-                    
-                    # Calculate mouth aspect ratio (MAR)
-                    mouth = self.extract_mouth_landmarks(landmarks)
-                    if mouth is not None:
-                        mar = mouth_aspect_ratio(mouth)
-                        result["mar"] = mar
-                        
-                        # Check for yawning - more sensitive detection
-                        if mar > self.mar_threshold:
-                            self._yawn_frames += 2  # Increment by 2 to detect yawning faster
-                            if self._yawn_frames >= self.yawn_frames_threshold:
-                                result["is_yawning"] = True
-                                self._yawn_frames = self.yawn_frames_threshold  # Cap at threshold
-                        else:
-                            self._yawn_frames = max(0, self._yawn_frames - 1)  # Gradual decrease
-                    
-                    # Calculate head pose
-                    head_pose = self.head_pose_estimator.estimate(frame, landmarks)
-                    if head_pose is not None:
-                        result["head_pose"] = head_pose
-                        
-                        # Check for distraction
-                        if self.is_distracted(head_pose):
-                            self._distraction_frames += 1
-                            if self._distraction_frames >= self.distraction_frames_threshold:
-                                result["is_distracted"] = True
-                                self._distraction_frames = self.distraction_frames_threshold  # Cap at threshold
-                        else:
-                            self._distraction_frames = max(0, self._distraction_frames - 1)  # Gradual decrease
-            else:
-                # Reset all counters when no face is detected
-                self.face_tracking_failed += 1
-                if self.face_tracking_failed > self.max_tracking_failures:
-                    self.last_face_box = None
+                logger.info(f"✅ Analysis: EAR={ear:.4f}, MAR={mar:.4f}, Yaw={yaw:.2f}°, Pitch={pitch:.2f}°")
+                
+                if is_drowsy or is_yawning or is_distracted:
+                    behaviors = []
+                    if is_drowsy: behaviors.append("DROWSY")
+                    if is_yawning: behaviors.append("YAWNING") 
+                    if is_distracted: behaviors.append("DISTRACTED")
+                    logger.warning(f"⚠️ BEHAVIORS DETECTED: {', '.join(behaviors)}")
+                
+                # Apply frame counting for consistent behavior detection
+                if is_drowsy:
+                    self._drowsy_frames += 1
+                else:
                     self._drowsy_frames = 0
+                    
+                if is_yawning:
+                    self._yawn_frames += 1
+                else:
                     self._yawn_frames = 0
+                    
+                if is_distracted:
+                    self._distraction_frames += 1
+                else:
                     self._distraction_frames = 0
-            
-            # Update behavior confidence with temporal smoothing
-            behavior_confidence = 0.0
-            if result["is_drowsy"]:
-                behavior_confidence = max(behavior_confidence, self._drowsy_frames / self.drowsy_frames_threshold)
-            if result["is_yawning"]:
-                behavior_confidence = max(behavior_confidence, self._yawn_frames / self.yawn_frames_threshold)
-            if result["is_distracted"]:
-                behavior_confidence = max(behavior_confidence, self._distraction_frames / self.distraction_frames_threshold)
-            
-            if self.use_temporal_smoothing:
-                behavior_confidence = self.smooth_confidence(behavior_confidence)
-            
-            result["behavior_confidence"] = behavior_confidence
-            
-            # Update behavior status
-            if face_box is None:
-                self._last_behavior = "NO FACE DETECTED"
-            elif behavior_confidence > self.config["behavior"]["confidence_threshold"]:
-                if result["is_drowsy"]:
-                    self._last_behavior = "DROWSY"
-                elif result["is_yawning"]:
-                    self._last_behavior = "YAWNING"
-                elif result["is_distracted"]:
-                    self._last_behavior = "DISTRACTED"
+                
+                # Determine final behavior based on frame thresholds
+                final_drowsy = self._drowsy_frames >= self.drowsy_frames_threshold
+                final_yawning = self._yawn_frames >= self.yawn_frames_threshold
+                final_distracted = self._distraction_frames >= self.distraction_frames_threshold
+                
+                # Calculate confidence based on consistency
+                confidence = 0.0
+                if final_drowsy or final_yawning or final_distracted:
+                    confidence = 0.8  # High confidence when behavior persists
+                elif is_drowsy or is_yawning or is_distracted:
+                    confidence = 0.5  # Medium confidence for single frame detection
+                
+                result = {
+                    "success": True,
+                    "face_box": analysis_result["face_box"],
+                    "behavior_category": {
+                        "is_drowsy": final_drowsy,
+                        "is_yawning": final_yawning,
+                        "is_distracted": final_distracted
+                    },
+                    "behavior_confidence": confidence,
+                    "metrics": {
+                        "ear": ear,
+                        "mar": mar,
+                        "head_pose": head_pose
+                    },
+                    "timestamp": datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f")
+                }
+                
             else:
-                self._last_behavior = "NO BEHAVIOR DETECTED"
+                logger.warning(f"❌ Face analysis failed: {analysis_result.get('debug_info', {}).get('error', 'Unknown error')}")
+                result = {
+                    "success": False,
+                    "error": "Face analysis failed",
+                    "face_box": None,
+                    "behavior_category": {
+                        "is_drowsy": False,
+                        "is_yawning": False,
+                        "is_distracted": False
+                    },
+                    "behavior_confidence": 0.0,
+                    "metrics": {
+                        "ear": 0.0,
+                        "mar": 0.0,
+                        "head_pose": None
+                    },
+                    "timestamp": datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f")
+                }
             
-            result["behavior"] = self._last_behavior
-            
-            # Record video if enabled and risky behavior is detected
-            if self.video_recorder:
-                try:
-                    is_risky = any([
-                        result["is_drowsy"],
-                        result["is_yawning"],
-                        result["is_distracted"]
-                    ])
-                    
-                    if is_risky:
-                        logger.info("Risky behavior detected in frame processor")
-                        behavior_type = None
-                        if result["is_drowsy"]:
-                            behavior_type = "drowsy"
-                        elif result["is_yawning"]:
-                            behavior_type = "yawning"
-                        elif result["is_distracted"]:
-                            behavior_type = "distracted"
-                        logger.info(f"Behavior type: {behavior_type}")
-                    
-                    success = self.video_recorder.write_frame(frame, is_risky)
-                    if not success and is_risky:
-                        logger.error("Failed to write frame during risky behavior")
-                except Exception as e:
-                    logger.error(f"Error in video recording: {str(e)}")
-                    logger.error(traceback.format_exc())
-            
-            # Update performance metrics
-            self.frame_count += 1
-            
+            # Log all events (not just when behaviors are detected) for continuous monitoring
+            try:
+                event_type = get_event_type(result)
+                log_event(self.log_dir, event_type, result)
+            except Exception as e:
+                logger.error(f"Error logging event: {str(e)}")
+
             return result
             
         except Exception as e:
-            logger.error(f"Error processing frame: {str(e)}")
-            logger.error(traceback.format_exc())
+            logger.error(f"❌ Error in frame processing: {e}")
             return {
+                "success": False,
                 "error": str(e),
-                "capture_fps": self.calculate_fps()
+                "face_box": None,
+                "behavior_category": {
+                    "is_drowsy": False,
+                    "is_yawning": False,
+                    "is_distracted": False
+                },
+                "behavior_confidence": 0.0,
+                "metrics": {
+                    "ear": 0.0,
+                    "mar": 0.0,
+                    "head_pose": None
+                },
+                "timestamp": datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f")
             }
-    
-    def apply_clahe(self, frame: np.ndarray) -> np.ndarray:
-        """Apply CLAHE for improved image quality"""
-        try:
+        
+    def preprocess_frame(self, frame):
+        """Preprocess frame for better detection"""
+        if self.resize_factor != 1.0:
+            frame = cv2.resize(frame, None, fx=self.resize_factor, fy=self.resize_factor)
+        
+        if self.config["clahe"]["enabled"]:
             lab = cv2.cvtColor(frame, cv2.COLOR_BGR2LAB)
             l, a, b = cv2.split(lab)
-            
-            clahe = cv2.createCLAHE(
-                clipLimit=self.config["clahe"]["clip_limit"],
-                tileGridSize=tuple(self.config["clahe"]["base_tile_grid_size"])
-            )
-            
+            clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
             cl = clahe.apply(l)
-            limg = cv2.merge((cl, a, b))
+            frame = cv2.cvtColor(cv2.merge((cl,a,b)), cv2.COLOR_LAB2BGR)
             
-            return cv2.cvtColor(limg, cv2.COLOR_LAB2BGR)
-        except Exception as e:
-            logger.warning(f"CLAHE application failed: {e}")
-            return frame
-            
-    def smooth_head_pose(self, head_pose: Tuple[float, float, float]) -> Tuple[float, float, float]:
-        """Apply smoothing to head pose angles"""
-        if not self.use_angle_smoothing or not head_pose:
-            return head_pose
-            
-        yaw, pitch, roll = head_pose
+        return frame
         
-        # Add to history
-        self.head_pose_history.append(head_pose)
-        
-        if len(self.head_pose_history) < 2:
-            return head_pose
-            
-        # Calculate mean of recent poses
-        poses = np.array(self.head_pose_history)
-        mean_pose = np.mean(poses, axis=0)
-        
-        # Limit maximum change from previous pose
-        if self.last_head_pose is not None:
-            last_yaw, last_pitch, last_roll = self.last_head_pose
-            
-            # Limit each angle change
-            yaw = np.clip(mean_pose[0], last_yaw - self.max_angle_change, last_yaw + self.max_angle_change)
-            pitch = np.clip(mean_pose[1], last_pitch - self.max_angle_change, last_pitch + self.max_angle_change)
-            roll = np.clip(mean_pose[2], last_roll - self.max_angle_change, last_roll + self.max_angle_change)
-            
-            smoothed_pose = (yaw, pitch, roll)
-        else:
-            smoothed_pose = tuple(mean_pose)
-            
-        self.last_head_pose = smoothed_pose
-        return smoothed_pose
-
-    def is_distracted(self, head_pose: Tuple[float, float, float]) -> bool:
-        """Check if the driver is distracted based on head pose angles"""
-        try:
-            if head_pose is None:
-                return False
-                
-            # Apply smoothing to head pose
-            smoothed_pose = self.smooth_head_pose(head_pose)
-            if smoothed_pose is None:
-                return False
-                
-            yaw, pitch, roll = smoothed_pose
-            
-            # Calculate the percentage of threshold exceeded for each angle
-            yaw_exceeded = max(0, (abs(yaw) - self.yaw_threshold * 0.5)) / (self.yaw_threshold * 0.5)
-            pitch_exceeded = max(0, (abs(pitch) - self.pitch_threshold * 0.5)) / (self.pitch_threshold * 0.5)
-            roll_exceeded = max(0, (abs(roll) - self.roll_threshold * 0.5)) / (self.roll_threshold * 0.5)
-            
-            # Consider distracted only if angles significantly exceed thresholds
-            angle_violation = max(yaw_exceeded, pitch_exceeded, roll_exceeded)
-            
-            # Must exceed at least 50% of threshold to be considered distracted
-            return angle_violation > 0.5
-            
-        except Exception as e:
-            logger.warning(f"Head pose analysis failed: {e}")
-            return False
-    
-    def calculate_fps(self) -> float:
-        """Calculate current FPS"""
-        current_time = time.time()
-        elapsed = current_time - self.last_fps_update
-        
-        if elapsed >= 1.0:  # Update FPS every second
-            self.fps = self.frame_count / elapsed
-            self.frame_count = 0
-            self.last_fps_update = current_time
-        
-        return self.fps
-    
-    def extract_eye_landmarks(self, landmarks):
-        """Extract eye landmarks from the full set of landmarks"""
-        try:
-            # For dlib landmarks
-            if hasattr(landmarks, 'part'):
-                left_eye = [(landmarks.part(i).x, landmarks.part(i).y) for i in LEFT_EYE_INDICES]
-                right_eye = [(landmarks.part(i).x, landmarks.part(i).y) for i in RIGHT_EYE_INDICES]
-                return left_eye, right_eye
-            # For numpy array landmarks
-            elif isinstance(landmarks, np.ndarray):
-                left_eye = landmarks[LEFT_EYE_INDICES]
-                right_eye = landmarks[RIGHT_EYE_INDICES]
-                return left_eye, right_eye
-            # For other types
-            else:
-                logger.warning(f"Unsupported landmark type: {type(landmarks)}")
-                return None, None
-        except Exception as e:
-            logger.error(f"Error extracting eye landmarks: {e}")
-            return None, None
-    
-    def extract_mouth_landmarks(self, landmarks):
-        """Extract mouth landmarks from the full set of landmarks"""
-        try:
-            # For dlib landmarks
-            if hasattr(landmarks, 'part'):
-                mouth = [(landmarks.part(i).x, landmarks.part(i).y) for i in MOUTH_INDICES]
-                return mouth
-            # For numpy array landmarks
-            elif isinstance(landmarks, np.ndarray):
-                mouth = landmarks[MOUTH_INDICES]
-                return mouth
-            # For other types
-            else:
-                logger.warning(f"Unsupported landmark type: {type(landmarks)}")
-                return None
-        except Exception as e:
-            logger.error(f"Error extracting mouth landmarks: {e}")
+    def get_face_roi(self, frame, face_box):
+        """Get region of interest around face"""
+        if face_box is None:
             return None
-    
-    def smooth_confidence(self, confidence: float) -> float:
-        """Apply temporal smoothing to behavior confidence value"""
-        if not self.use_temporal_smoothing:
-            return confidence
             
-        # Add current confidence to history
-        self.behavior_confidence_history.append(confidence)
+        x, y, w, h = face_box
+        margin = self.roi_margin
         
-        # Apply weighted smoothing
-        return weighted_temporal_smoothing(
-            confidence, 
-            self.behavior_confidence_history, 
-            alpha=0.3
-        )
-    
+        # Add margin around face
+        x1 = max(0, x - margin)
+        y1 = max(0, y - margin)
+        x2 = min(frame.shape[1], x + w + margin)
+        y2 = min(frame.shape[0], y + h + margin)
+        
+        return (x1, y1, x2-x1, y2-y1)
+
     def run(self):
-        """Main processing loop"""
-        while not self.stop_event.is_set():
-            try:
-                # Get frame from queue
-                frame = self.frame_queue.get(timeout=1.0)
-                
-                # Process frame
-                result = self.process_frame(frame)
-                
-                # Put result in queue
-                self.result_queue.put(result)
-                
-                # Update frame count for FPS calculation
-                self.frame_count += 1
-                
-            except queue.Empty:
-                continue
-            except Exception as e:
-                logger.exception(f"Error in frame processing loop: {str(e)}")
-                continue
-                
-        # Clean up video recorder when stopping
-        try:
-            if self.video_recorder.is_recording:
-                self.video_recorder.stop_recording()
-        except Exception as e:
-            logger.error(f"Error stopping video recorder: {str(e)}") 
+        """Run the frame processor (if needed for standalone operation)"""
+        logger.info("Frame processor running...")
+        # Implementation would depend on specific requirements
+        pass 

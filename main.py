@@ -24,9 +24,8 @@ from typing import Dict, Any, Optional
 # Import project modules
 from frame_processor import OptimizedFrameProcessor
 from event_logger import log_event
-from behavior_categories import BEHAVIOR_CATEGORIES
 from config_loader import load_config, DEFAULT_CONFIG_PATH
-from face_analysis import FaceDetector, HeadPoseEstimator
+# ImprovedFaceAnalyzer is imported by frame_processor
 
 # Configure logging
 logging.basicConfig(
@@ -46,6 +45,7 @@ CORS(app, resources={
         "methods": ["GET", "POST", "OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization", "Accept", "User-Agent"],
         "expose_headers": ["Content-Type", "Authorization"],
+        
         "supports_credentials": True,
         "max_age": 3600
     }
@@ -138,42 +138,149 @@ def initialize_system(config_path=DEFAULT_CONFIG_PATH):
         logger.error(f"Failed to initialize system: {str(e)}", exc_info=True)
         raise
 
-@app.route('/api/health', methods=['GET', 'OPTIONS'])
+@app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
-    logger.debug("Health check endpoint called")
-    logger.debug("Method: %s", request.method)
-    logger.debug("Headers: %s", dict(request.headers))
-    logger.debug("Remote addr: %s", request.remote_addr)
-    
-    if request.method == 'OPTIONS':
-        logger.debug("Handling OPTIONS request for health check")
-        response = make_response()
-        response.headers.update({
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization, Accept, User-Agent'
-        })
-        return response
-    
     try:
-        response_data = {
+        health_data = {
             'status': 'healthy',
             'timestamp': datetime.now().isoformat(),
             'message': 'Server is running',
             'remote_addr': request.remote_addr
         }
-        logger.info("Health check successful: %s", response_data)
-        return jsonify(response_data)
+        logger.info(f"Health check successful: {health_data}")
+        return jsonify(health_data), 200
     except Exception as e:
-        error_msg = f"Health check failed: {str(e)}"
-        logger.error(error_msg)
-        logger.error(traceback.format_exc())
-        return jsonify({
+        error_data = {
             'status': 'error',
             'timestamp': datetime.now().isoformat(),
-            'message': error_msg,
+            'message': str(e),
             'remote_addr': request.remote_addr
+        }
+        logger.error(f"Health check failed: {error_data}")
+        return jsonify(error_data), 500
+
+@app.route('/api/test_behavior', methods=['GET'])
+def test_behavior():
+    """Test endpoint that always returns drowsy behavior"""
+    logger.info("🔴 TEST ENDPOINT: Always serving DROWSY behavior")
+    
+    return jsonify({
+        'success': True,
+        'timestamp': datetime.now().isoformat(),
+        'behavior_flags': {
+            'is_drowsy': True,
+            'is_yawning': False,
+            'is_distracted': False
+        },
+        'metrics': {
+            'ear': 0.15,  # Low EAR indicates drowsiness
+            'mar': 0.6,
+            'pitch': 0.0,
+            'yaw': 0.0
+        },
+        'behavior_output': 'TEST ENDPOINT - DROWSY ALWAYS ACTIVE',
+        'behavior_confidence': 1.0
+    }), 200
+
+@app.route('/api/latest_behavior', methods=['GET'])
+def get_latest_behavior():
+    """Get the latest behavior detection from driver_monitoring.json"""
+    try:
+        log_file_path = os.path.join(str(log_dir), "driver_monitoring.json")
+        
+        if not os.path.exists(log_file_path):
+            logger.warning(f"Driver monitoring log file not found: {log_file_path}")
+            return jsonify({
+                'success': False,
+                'error': 'No monitoring data available',
+                'behavior_category': {
+                    'is_drowsy': False,
+                    'is_yawning': False,
+                    'is_distracted': False
+                }
+            }), 404
+        
+        # Read the latest entry from the log file
+        latest_entry = None
+        try:
+            with open(log_file_path, 'r') as f:
+                lines = f.readlines()
+                # Get the last non-empty line
+                for line in reversed(lines):
+                    line = line.strip()
+                    if line:
+                        latest_entry = json.loads(line)
+                        break
+        except Exception as e:
+            logger.error(f"Error reading driver monitoring log: {e}")
+            return jsonify({
+                'success': False,
+                'error': f'Error reading log file: {str(e)}',
+                'behavior_category': {
+                    'is_drowsy': False,
+                    'is_yawning': False,
+                    'is_distracted': False
+                }
+            }), 500
+        
+        if not latest_entry:
+            logger.warning("No entries found in driver monitoring log")
+            return jsonify({
+                'success': False,
+                'error': 'No monitoring entries found',
+                'behavior_category': {
+                    'is_drowsy': False,
+                    'is_yawning': False,
+                    'is_distracted': False
+                }
+            }), 404
+        
+        # Extract behavior information
+        behavior_category = latest_entry.get("behavior_category", {})
+        timestamp = latest_entry.get("timestamp", datetime.now().isoformat())
+        
+        # Log the behavior detection with detailed metrics
+        is_drowsy = behavior_category.get("is_drowsy", False)
+        is_yawning = behavior_category.get("is_yawning", False)
+        is_distracted = behavior_category.get("is_distracted", False)
+        
+        # Extract metrics for detailed logging
+        metrics = latest_entry.get("metrics", {})
+        ear = metrics.get("ear", 0)
+        mar = metrics.get("mar", 0)
+        head_pose = metrics.get("head_pose", [0, 0, 0])
+        yaw = head_pose[1] if len(head_pose) > 1 else 0
+        pitch = head_pose[0] if len(head_pose) > 0 else 0
+        
+        if is_drowsy or is_yawning or is_distracted:
+            behaviors = []
+            if is_drowsy: behaviors.append("DROWSY")
+            if is_yawning: behaviors.append("YAWNING")
+            if is_distracted: behaviors.append("DISTRACTED")
+            logger.warning(f"🚨 RISKY BEHAVIOR DETECTED: {', '.join(behaviors)} | EAR={ear:.3f} MAR={mar:.3f} Yaw={yaw:.1f}° Pitch={pitch:.1f}°")
+        else:
+            logger.debug(f"✅ Normal behavior | EAR={ear:.3f} MAR={mar:.3f} Yaw={yaw:.1f}° Pitch={pitch:.1f}°")
+        
+        return jsonify({
+            'success': True,
+            'behavior_category': behavior_category,
+            'behavior_confidence': latest_entry.get("behavior_confidence", 0.0),
+            'timestamp': timestamp,
+            'metrics': latest_entry.get("metrics", {}),
+            'entry_age_seconds': (datetime.now() - datetime.fromisoformat(timestamp.replace('Z', '+00:00').split('.')[0])).total_seconds() if timestamp else 0
+        }), 200
+            
+    except Exception as e:
+        logger.error(f"Error getting latest behavior: {str(e)}")
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'behavior_category': {
+                'is_drowsy': False,
+                'is_yawning': False,
+                'is_distracted': False
+            }
         }), 500
 
 @app.route('/api/process_frame', methods=['POST'])
@@ -181,68 +288,69 @@ def process_frame():
     """Process a single frame of video data"""
     global session_id
     
+    logger.debug("Received frame processing request")
+    logger.debug("Content-Type: %s", request.content_type)
+    logger.debug("Content-Length: %s", request.content_length)
+    
     try:
         # Get data from request
         data = request.get_json()
+        logger.debug("Received data keys: %s", list(data.keys()) if data else None)
+        
         if not data or 'frame' not in data:
+            logger.error("No frame data provided in request")
             return jsonify({
                 'success': False,
                 'error': 'No frame data provided',
                 'timestamp': datetime.now().isoformat()
             }), 400
 
+        # Log frame data length
+        frame_data = data['frame']
+        logger.debug("Frame data length: %d", len(frame_data) if frame_data else 0)
+
         # Convert base64 frame to CV2 image
         frame = base64_to_cv2(data['frame'])
+        logger.debug("Successfully converted frame to CV2 image. Shape: %s", frame.shape if frame is not None else None)
         
         # Process the frame
         result = frame_processor.process_frame(frame)
+        logger.debug("Frame processing result: %s", result)
         
-        # Add session ID to result
-        result['session_id'] = session_id
-        
-        # Get head pose angles
-        head_pose = result.get('head_pose', [0, 0, 0])
-        if isinstance(head_pose, (list, tuple, np.ndarray)) and len(head_pose) >= 3:
-            pitch, yaw, roll = head_pose[:3]
-        else:
-            pitch, yaw, roll = 0.0, 0.0, 0.0
-        
-        # Determine behavior output
-        behavior_category = {
-            'is_drowsy': bool(result.get('is_drowsy', False)),
-            'is_yawning': bool(result.get('is_yawning', False)),
-            'is_distracted': bool(result.get('is_distracted', False))
-        }
-        
-        if not result.get('face_box'):
-            behavior_output = "NO FACE DETECTED"
-        elif any(behavior_category.values()):
-            behavior_output = "RISKY BEHAVIOR DETECTED"
-        else:
-            behavior_output = "NO RISKY BEHAVIOR DETECTED"
-        
-        # Format response according to desired structure
+        # Format behaviors for response
+        behaviors = []
+        if result.get('is_drowsy', False):
+            behaviors.append('drowsy')
+        if result.get('is_yawning', False):
+            behaviors.append('yawning')
+        if result.get('is_distracted', False):
+            behaviors.append('distracted')
+            
+        # Log events if behaviors detected
+        if behaviors:
+            log_event({
+                'session_id': session_id,
+                'timestamp': datetime.now().isoformat(),
+                'behaviors': behaviors,
+                'metrics': {
+                    'ear': result.get('ear', 0),
+                    'mar': result.get('mar', 0),
+                    'head_pose': result.get('head_pose', None)
+                }
+            })
+            
+        # Format response for frontend
         response = {
+            'success': True,
+            'session_id': session_id,
             'timestamp': datetime.now().isoformat(),
-            'behavior_category': behavior_category,
-            'behavior_output': behavior_output,
-            'mar': float(result.get('mar', 0.0)),
-            'ear': float(result.get('ear', 0.0)),
-            'pitch': float(pitch),
-            'yaw': float(yaw),
-            'roll': float(roll),
-            'behavior_confidence': float(result.get('behavior_confidence', 0.0)),
-            'session_id': session_id
+            'behaviors': behaviors,
+            'metrics': {
+                'ear': result.get('ear', 0),
+                'mar': result.get('mar', 0),
+                'head_pose': result.get('head_pose', None)
+            }
         }
-        
-        # Log the event if logging is enabled
-        if config['logging']['log_events']:
-            try:
-                # Log the event to the appropriate event file
-                log_event(log_dir, 'frame_processed', result)
-            except Exception as log_error:
-                logger.error(f"Failed to log event: {log_error}")
-                logger.error(traceback.format_exc())
         
         return jsonify(response)
         
@@ -250,9 +358,11 @@ def process_frame():
         error_msg = f"Error processing frame: {str(e)}"
         logger.error(error_msg)
         logger.error(traceback.format_exc())
+        logger.error(f"Request data: {request.get_data(as_text=True)}")
         return jsonify({
             'success': False,
             'error': error_msg,
+            'traceback': traceback.format_exc(),
             'timestamp': datetime.now().isoformat()
         }), 500
 

@@ -2,46 +2,34 @@
 
 import numpy as np
 import logging
+from .ear_mar import mouth_aspect_ratio as mar_calculator
 
 logger = logging.getLogger(__name__)
 
 def mouth_aspect_ratio(mouth_points):
     """Calculate mouth aspect ratio from mouth landmark points"""
-    try:
-        # Validate input
-        if not isinstance(mouth_points, np.ndarray) or mouth_points.shape[0] != 12:
-            return 0.0
-            
-        # Compute vertical distances
-        A = np.linalg.norm(mouth_points[2] - mouth_points[10])  # 51-59
-        B = np.linalg.norm(mouth_points[3] - mouth_points[9])   # 52-58
-        C = np.linalg.norm(mouth_points[4] - mouth_points[8])   # 53-57
-        
-        # Compute horizontal distance
-        D = np.linalg.norm(mouth_points[0] - mouth_points[6])   # 49-55
-        
-        # Calculate MAR
-        if D == 0:
-            return 0.0
-            
-        mar = (A + B + C) / (3.0 * D)
-        return float(mar)
-        
-    except Exception as e:
-        logger.error(f"Error calculating mouth aspect ratio: {e}")
-        return 0.0
+    return mar_calculator(mouth_points)
 
-def get_mouth_state(mar, threshold_closed=0.4, threshold_open=0.7):
+def get_mouth_state(mar, threshold_closed=0.35, threshold_open=0.65):
     """Determine mouth state from mouth aspect ratio"""
     try:
+        if mar is None:
+            return "UNKNOWN", 0.0
+            
         if mar <= threshold_closed:
-            return "CLOSED", 1.0 - (mar / threshold_closed)
+            confidence = 1.0 - (mar / threshold_closed)
+            return "CLOSED", min(1.0, max(0.0, confidence))
         elif mar >= threshold_open:
-            return "WIDE OPEN", mar / threshold_open
+            confidence = (mar - threshold_open) / (threshold_open * 0.5)  # Scale confidence
+            return "WIDE OPEN", min(1.0, max(0.0, confidence))
         else:
-            # Partially open
-            ratio = (mar - threshold_closed) / (threshold_open - threshold_closed)
-            return "PARTIALLY OPEN", ratio
+            # Partially open - calculate confidence based on distance from thresholds
+            mid_point = (threshold_closed + threshold_open) / 2
+            if mar < mid_point:
+                confidence = (mar - threshold_closed) / (mid_point - threshold_closed)
+            else:
+                confidence = (threshold_open - mar) / (threshold_open - mid_point)
+            return "PARTIALLY OPEN", min(1.0, max(0.0, confidence))
             
     except Exception as e:
         logger.error(f"Error determining mouth state: {e}")
