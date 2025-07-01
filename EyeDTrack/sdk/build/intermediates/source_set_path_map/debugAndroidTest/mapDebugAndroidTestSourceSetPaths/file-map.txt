@@ -1,5 +1,0 @@
-org.opencv.test.sdk-androidTest-0 C:\Users\Samantha\Desktop\SYSTEM\FRONTEND-AGAIN\EyeDTrack\sdk\build\generated\res\resValues\androidTest\debug
-org.opencv.test.sdk-mergeDebugAndroidTestResources-1 C:\Users\Samantha\Desktop\SYSTEM\FRONTEND-AGAIN\EyeDTrack\sdk\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-org.opencv.test.sdk-mergeDebugAndroidTestResources-2 C:\Users\Samantha\Desktop\SYSTEM\FRONTEND-AGAIN\EyeDTrack\sdk\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-org.opencv.test.sdk-debugAndroidTest-3 C:\Users\Samantha\Desktop\SYSTEM\FRONTEND-AGAIN\EyeDTrack\sdk\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
-org.opencv.test.sdk-debug-4 C:\Users\Samantha\Desktop\SYSTEM\FRONTEND-AGAIN\EyeDTrack\sdk\build\intermediates\packaged_res\debug\packageDebugResources
