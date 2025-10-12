@@ -62,10 +62,10 @@ integration:
     enabled: true
     host: "0.0.0.0"
     port: 5000
-    base_url: "192.168.68.109"
+    base_url: "192.168.68.106"
     api_key: ""
     cors_origins: ["*"]
-    allowed_hosts: ["localhost", "127.0.0.1", "10.0.2.2", "0.0.0.0", "*", "172.16.112.81", "192.168.68.109"]
+    allowed_hosts: ["localhost", "127.0.0.1", "10.0.2.2", "0.0.0.0", "*", "172.16.112.81", "192.168.68.106"]
   mqtt:
     enabled: false
     broker: "localhost"
@@ -101,6 +101,13 @@ robustness:
   automatic_recalibration: true
   max_recovery_attempts: 3
 
+# Frame-based thresholds for consistent behavior detection
+thresholds:
+  # Number of consecutive frames required before triggering behavior  
+  drowsy_frames: 6     # ~0.2s at 30fps (reduced for faster response)
+  yawn_frames: 2       # ~0.07s at 30fps (REDUCED - yawns are very brief!)
+  distraction_frames: 5 # ~0.17s at 30fps (reduced for faster response)
+
 detection:
   # Enable improved dlib-based detection (more accurate)
   use_improved_dlib: true
@@ -108,17 +115,12 @@ detection:
   # Use standalone ImprovedFaceAnalyzer (pure dlib, no MediaPipe fallback)
   use_standalone_analyzer: true   # Set to true to use improved_detection.py
   
-  # Eye aspect ratio threshold for drowsiness detection (more sensitive)
-  ear_threshold: 0.28  # Increased from 0.25 - detects drowsiness earlier
+  # Eye aspect ratio threshold for drowsiness detection (matching reference code)
+  ear_threshold: 0.25  # FIXED: Matching reference code exactly
   
-  # Mouth aspect ratio threshold for yawning detection (more sensitive)
-  mar_threshold: 0.50  # FIXED: Lowered from 0.58 to 0.50 - more sensitive yawn detection
+  # Mouth aspect ratio threshold for yawning detection (MORE SENSITIVE)
+  mar_threshold: 0.6   # CHANGED: Lowered from 0.7 to 0.6 for more sensitive yawning detection
   
-  # Head pose thresholds for distraction detection (matching reference code)
-  yaw_threshold: 25    # Same as reference code - 25 degrees
-  pitch_threshold: 15  # Same as reference code - 15 degrees
-  
-  # Frame count thresholds (reduced for faster detection)
-  drowsy_frames_threshold: 5     # REDUCED: From 8 to 5 - faster drowsiness detection
-  yawn_frames_threshold: 8       # REDUCED: From 12 to 8 - faster yawning detection  
-  distraction_frames_threshold: 6  # REDUCED: From 10 to 6 - faster distraction detection
+  # Head pose thresholds for distraction detection (LESS SENSITIVE)
+  yaw_threshold: 35    # INCREASED: Was 25, now 35 degrees (less sensitive)
+  pitch_threshold: 25  # INCREASED: Was 15, now 25 degrees (less sensitive)

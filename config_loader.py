@@ -212,12 +212,27 @@ def load_config(config_path=None):
         else:
             logger.warning("Using default configuration")
 
+        # Legacy thresholds (maintain backwards compatibility)
+        default_config["thresholds"] = {
+            "drowsy_frames": default_config["thresholds"].get("drowsy_frames", 8),
+            "yawn_frames": default_config["thresholds"].get("yawn_frames", 3), 
+            "distraction_frames": default_config["thresholds"].get("distraction_frames", 6)
+        }
+        
+        # Merge detection config with thresholds for backwards compatibility
+        if "detection" in default_config:
+            # Use detection section frame thresholds if available, otherwise use thresholds section
+            detection = default_config["detection"]
+            detection["drowsy_frames_threshold"] = detection.get("drowsy_frames_threshold", default_config["thresholds"]["drowsy_frames"])
+            detection["yawn_frames_threshold"] = detection.get("yawn_frames_threshold", default_config["thresholds"]["yawn_frames"])
+            detection["distraction_frames_threshold"] = detection.get("distraction_frames_threshold", default_config["thresholds"]["distraction_frames"])
+
         return default_config
 
     except Exception as e:
         logger.error(f"Error loading configuration: {str(e)}")
         logger.warning("Using default configuration")
-        return default_config
+        return DEFAULT_CONFIG
 
 def validate_config(config: Dict[str, Any]) -> None:
     """

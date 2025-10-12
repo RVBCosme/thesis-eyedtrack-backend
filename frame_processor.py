@@ -52,18 +52,19 @@ class OptimizedFrameProcessor:
         self._distraction_frames = 0
         self._last_behavior = BEHAVIOR_CATEGORIES["NO_BEHAVIOR"]
         
-        # Get thresholds from config - use new detection section if available, fallback to old thresholds
-        detection_config = config.get("detection", config.get("thresholds", {}))
+        # Get thresholds from config - use new detection section with proper fallbacks
+        detection_config = config.get("detection", {})
         
-        self.ear_threshold = detection_config.get("ear_threshold", config["thresholds"]["ear_lower"])
-        self.mar_threshold = detection_config.get("mar_threshold", config["thresholds"]["mar_upper"])
-        self.drowsy_frames_threshold = detection_config.get("drowsy_frames_threshold", config["thresholds"]["drowsy_frames"])
-        self.yawn_frames_threshold = detection_config.get("yawn_frames_threshold", config["thresholds"]["yawn_frames"])
-        self.distraction_frames_threshold = detection_config.get("distraction_frames_threshold", config["thresholds"]["distraction_frames"])
+        # FIXED: Use proper fallback values that actually exist or provide defaults
+        self.ear_threshold = detection_config.get("ear_threshold", 0.25)  # Default EAR threshold
+        self.mar_threshold = detection_config.get("mar_threshold", 0.7)   # Default MAR threshold
+        self.drowsy_frames_threshold = detection_config.get("drowsy_frames_threshold", config.get("thresholds", {}).get("drowsy_frames", 8))
+        self.yawn_frames_threshold = detection_config.get("yawn_frames_threshold", config.get("thresholds", {}).get("yawn_frames", 3))
+        self.distraction_frames_threshold = detection_config.get("distraction_frames_threshold", config.get("thresholds", {}).get("distraction_frames", 6))
         
-        # Head pose thresholds
-        self.yaw_threshold = detection_config.get("yaw_threshold", config["thresholds"]["yaw_threshold"])
-        self.pitch_threshold = detection_config.get("pitch_threshold", config["thresholds"]["pitch_threshold"])
+        # Head pose thresholds with proper fallbacks
+        self.yaw_threshold = detection_config.get("yaw_threshold", 25)    # Default yaw threshold
+        self.pitch_threshold = detection_config.get("pitch_threshold", 15) # Default pitch threshold
         
         # Performance optimizations
         self.use_threading = config["performance"]["use_threading"]
