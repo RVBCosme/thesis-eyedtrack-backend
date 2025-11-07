@@ -283,6 +283,140 @@ def get_latest_behavior():
             }
         }), 500
 
+@app.route('/api/alert_history', methods=['GET'])
+def get_alert_history():
+    """Return recent risky behavior alerts from driver_monitoring.json.
+
+    Query params:
+      - limit (int): max number of alerts to return (default 100)
+    """
+    try:
+        limit = request.args.get('limit', default=100, type=int)
+
+        log_file_path = os.path.join(str(log_dir), "driver_monitoring.json")
+        abs_log_path = os.path.abspath(log_file_path)
+        if not os.path.exists(log_file_path):
+            logger.warning(f"Driver monitoring log file not found: {log_file_path}")
+            return jsonify({
+                'success': True,
+                'alerts': [],
+                'total_count': 0,
+                'returned_count': 0,
+                'latest_timestamp': None,
+                'api_timestamp': datetime.now().isoformat(),
+                'log_file_path': abs_log_path,
+                'file_exists': False,
+                'file_size_bytes': 0
+            }), 200
+
+        alerts = []
+        total_risky = 0
+
+        with open(log_file_path, 'r') as f:
+            for raw_line in f:
+                line = raw_line.strip()
+                if not line:
+                    continue
+                try:
+                    entry = json.loads(line)
+                    if entry.get('behavior_output') == 'RISKY BEHAVIOR DETECTED':
+                        total_risky += 1
+                        alerts.append(entry)
+                except Exception as e:
+                    logger.debug(f"Skipping unparsable log line: {e}")
+
+        def parse_ts(ts: str):
+            try:
+                return datetime.fromisoformat(ts.replace('Z', '+00:00').split('.')[0])
+            except Exception:
+                return datetime.min
+
+        alerts.sort(key=lambda a: parse_ts(a.get('timestamp', '')), reverse=True)
+        limited_alerts = alerts[: max(0, limit)]
+        latest_ts = limited_alerts[0].get('timestamp') if limited_alerts else None
+
+        file_size = 0
+        try:
+            file_size = os.path.getsize(log_file_path)
+        except Exception:
+            file_size = 0
+
+        return jsonify({
+            'success': True,
+            'alerts': limited_alerts,
+            'total_count': total_risky,
+            'returned_count': len(limited_alerts),
+            'latest_timestamp': latest_ts,
+            'api_timestamp': datetime.now().isoformat(),
+            'log_file_path': abs_log_path,
+            'file_exists': True,
+            'file_size_bytes': file_size
+        }), 200
+
+    except Exception as e:
+        logger.error(f"Error getting alert history: {str(e)}", exc_info=True)
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'alerts': [],
+            'total_count': 0,
+            'returned_count': 0,
+            'latest_timestamp': None,
+            'api_timestamp': datetime.now().isoformat()
+        }), 500
+
+@app.route('/api/clear_alert_history', methods=['POST'])
+def clear_alert_history():
+    """Truncate driver_monitoring.json so the app sees an empty history."""
+    try:
+        log_file_path = os.path.join(str(log_dir), "driver_monitoring.json")
+        if not os.path.exists(log_file_path):
+            # Nothing to clear; report success so UI can refresh to empty
+            return jsonify({
+                'success': True,
+                'message': 'No log file found; history already empty',
+                'api_timestamp': datetime.now().isoformat()
+            }), 200
+
+        # Optionally collect stats before clearing
+        total_lines = 0
+        risky_before = 0
+        try:
+            with open(log_file_path, 'r') as f:
+                for raw in f:
+                    line = raw.strip()
+                    if not line:
+                        continue
+                    total_lines += 1
+                    try:
+                        obj = json.loads(line)
+                        if obj.get('behavior_output') == 'RISKY BEHAVIOR DETECTED':
+                            risky_before += 1
+                    except Exception:
+                        pass
+        except Exception as e:
+            logger.debug(f"Unable to scan log before clear: {e}")
+
+        # Truncate file
+        open(log_file_path, 'w').close()
+        logger.info("driver_monitoring.json truncated via /api/clear_alert_history")
+
+        return jsonify({
+            'success': True,
+            'message': 'Alert history cleared',
+            'previous_total_entries': total_lines,
+            'previous_risky_entries': risky_before,
+            'api_timestamp': datetime.now().isoformat()
+        }), 200
+
+    except Exception as e:
+        logger.error(f"Error clearing alert history: {str(e)}", exc_info=True)
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'api_timestamp': datetime.now().isoformat()
+        }), 500
+
 @app.route('/api/process_frame', methods=['POST'])
 def process_frame():
     """Process a single frame of video data"""
