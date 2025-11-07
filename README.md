@@ -48,7 +48,9 @@ To change API call targets, update the backend integration URL in your configura
 # Path: config.yaml
 integration:
   base_url: "http://<your-private-IP-address>"
+  allowed_hosts: ["localhost", "127.0.0.1", "10.0.2.2", "0.0.0.0", "*", "your-private-IP-address"]
 ```
+
 **Tip**: Your private IP address will be displayed in the terminal when you run the server.
 
 ---
@@ -58,4 +60,5 @@ integration:
 - Pamela Lapiña
 - Samantha Nicole Maturan
 - Charles Derick Yu
+
 
