@@ -62,10 +62,10 @@ integration:
     enabled: true
     host: "0.0.0.0"
     port: 5000
-    base_url: "192.168.68.106"
+    base_url: "http://<your-private-IP-address>"
     api_key: ""
     cors_origins: ["*"]
-    allowed_hosts: ["localhost", "127.0.0.1", "10.0.2.2", "0.0.0.0", "*", "172.16.112.81", "192.168.68.106"]
+    allowed_hosts: ["localhost", "127.0.0.1", "10.0.2.2", "0.0.0.0", "*", "your-private-IP-address"]
   mqtt:
     enabled: false
     broker: "localhost"
